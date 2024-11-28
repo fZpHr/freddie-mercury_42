@@ -105,7 +105,7 @@ var _grab_points : Array[XRToolsGrabPoint] = []
 var _highlight_requests : Dictionary = {}
 
 # Is this node highlighted
-var _highlighted : bool = false
+var _highlighted : bool = true
 
 
 # Remember some state so we can return to it when the user drops the object

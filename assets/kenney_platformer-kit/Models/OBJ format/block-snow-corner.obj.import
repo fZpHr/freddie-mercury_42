@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgtgn5kubfgrf"
+path="res://.godot/imported/block-snow-corner.obj-0243283990ca5eb1a590f8ce44664e77.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-snow-corner.obj-0243283990ca5eb1a590f8ce44664e77.mesh"]
+
+source_file="res://assets/kenney_platformer-kit/Models/OBJ format/block-snow-corner.obj"
+dest_files=["res://.godot/imported/block-snow-corner.obj-0243283990ca5eb1a590f8ce44664e77.mesh", "res://.godot/imported/block-snow-corner.obj-0243283990ca5eb1a590f8ce44664e77.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,8 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=23 format=3 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ls2uq"]
 [ext_resource type="PackedScene" uid="uid://k51uskse8var" path="res://xr_origin_3d.tscn" id="2_iwt21"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_5vv8y"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="3_a5c7j"]
+[ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="3_f67ss"]
+[ext_resource type="PackedScene" uid="uid://l0rqy7e41mmj" path="res://cube.tscn" id="3_x5572"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="4_xcu5g"]
+[ext_resource type="PackedScene" uid="uid://iovy60mjnlxo" path="res://RockClimbObject.tscn" id="6_khfoy"]
+[ext_resource type="Shader" path="res://water.gdshader" id="8_j8s71"]
+
+[sub_resource type="Resource" id="Resource_4ahhv"]
+script = ExtResource("4_xcu5g")
+flags = 0
+move_drag = 5.0
+move_traction = 30.0
+stop_on_slope = true
+move_max_slope = 45.0
+jump_max_slope = 45.0
+jump_velocity = 3.0
+bounciness = 0.0
+bounce_threshold = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1xka"]
+albedo_color = Color(0.000194641, 0.123895, 0.466228, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ke3w2"]
+material = SubResource("StandardMaterial3D_m1xka")
+size = Vector3(10, 10, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ulntr"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrtjn"]
+albedo_color = Color(0.403922, 0.411765, 0.737255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lofma"]
+material = SubResource("StandardMaterial3D_yrtjn")
+size = Vector3(1, 1.3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8sfdp"]
+size = Vector3(1, 1.3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ysnmr"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7em54"]
+size = Vector3(20, 0.1, 20)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_407md"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,34 +59,200 @@ background_mode = 2
 sky = SubResource("Sky_6dibi")
 tonemap_mode = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ysnmr"]
-size = Vector3(5, 0.1, 5)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxfse"]
+render_priority = 0
+shader = ExtResource("8_j8s71")
+shader_parameter/WATER_COL = Vector4(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Vector4(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Vector4(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 4.0
+shader_parameter/tile = Vector2(64, 64)
+shader_parameter/height = 2.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 2.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_7em54"]
-size = Vector3(5, 0.1, 5)
+[sub_resource type="PlaneMesh" id="PlaneMesh_j7rsq"]
+material = SubResource("ShaderMaterial_nxfse")
+size = Vector2(128, 128)
+subdivide_width = 32
+subdivide_depth = 32
 
 [node name="main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 script = ExtResource("1_ls2uq")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+[node name="Player" parent="." instance=ExtResource("2_iwt21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82582, 0.956544)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5haf4")
+[node name="XRCamera3D" parent="Player" index="0"]
+fov = 90.8917
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="MovementClimb" parent="Player/LeftH" index="3" instance=ExtResource("3_f67ss")]
+
+[node name="MovementJump" parent="Player/RightH" index="3" instance=ExtResource("3_a5c7j")]
+jump_button_action = "ax_button"
+
+[node name="MovementClimb" parent="Player/RightH" index="4" instance=ExtResource("3_f67ss")]
+
+[node name="PlayerBody" parent="Player" index="3"]
+physics = SubResource("Resource_4ahhv")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Object" type="Node3D" parent="Map"]
+
+[node name="Rock" type="Node3D" parent="Map/Object"]
+
+[node name="RockClimbObject" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48813, 1.33604, 5.49634)
+
+[node name="RockClimbObject2" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.28033, 0.827524, 5.49634)
+
+[node name="RockClimbObject3" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16834, 1.84285, 5.49634)
+
+[node name="RockClimbObject4" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.43016, 2.29775, 5.49634)
+
+[node name="RockClimbObject5" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.21978, 2.6449, 5.49634)
+
+[node name="RockClimbObject6" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56205, 3.1212, 5.49634)
+
+[node name="RockClimbObject7" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23841, 3.36585, 5.49634)
+
+[node name="RockClimbObject8" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59752, 3.90515, 5.49634)
+
+[node name="RockClimbObject9" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26442, 4.11963, 5.49634)
+
+[node name="RockClimbObject10" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82005, 1.81696, 5.49634)
+
+[node name="RockClimbObject11" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46608, 0.937747, 5.49634)
+
+[node name="RockClimbObject12" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66016, 2.71269, 5.49634)
+
+[node name="RockClimbObject13" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0545, 1.71913, 5.49634)
+
+[node name="RockClimbObject14" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46386, 2.53131, 5.49634)
+
+[node name="RockClimbObject15" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6321, 3.51065, 5.49634)
+
+[node name="RockClimbObject16" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78253, 4.40935, 5.49634)
+
+[node name="RockClimbObject17" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69724, 3.39573, 5.49634)
+
+[node name="RockClimbObject18" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82557, 4.25184, 5.49634)
+
+[node name="RockClimbObject19" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10347, 1.2815, 5.49634)
+
+[node name="RockClimbObject20" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175884, 1.78387, 5.49634)
+
+[node name="RockClimbObject21" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251306, 1.03793, 5.49634)
+
+[node name="RockClimbObject22" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.38418, 1.5266, 5.49634)
+
+[node name="RockClimbObject23" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11588, 1.1452, 5.49634)
+
+[node name="RockClimbObject24" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8786, 1.97476, 5.49634)
+
+[node name="RockClimbObject25" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34372, 2.25112, 5.49634)
+
+[node name="RockClimbObject26" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0751276, 2.43456, 5.49634)
+
+[node name="RockClimbObject27" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.810997, 3.34447, 5.49634)
+
+[node name="RockClimbObject28" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706698, 3.08407, 5.49634)
+
+[node name="RockClimbObject29" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28038, 2.94372, 5.49634)
+
+[node name="RockClimbObject30" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11999, 2.53458, 5.49634)
+
+[node name="RockClimbObject31" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70768, 3.41735, 5.49634)
+
+[node name="RockClimbObject32" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0809278, 3.73626, 5.49634)
+
+[node name="RockClimbObject33" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05589, 4.42611, 5.49634)
+
+[node name="RockClimbObject34" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662669, 4.57992, 5.49634)
+
+[node name="RockClimbObject35" parent="Map/Object/Rock" instance=ExtResource("6_khfoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69861, 4.27994, 5.49634)
+
+[node name="WallClimb2" type="MeshInstance3D" parent="Map/Object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012362, -0.0165982, 5.99634)
+mesh = SubResource("BoxMesh_ke3w2")
+skeleton = NodePath("StaticBody3d")
+
+[node name="StaticBody3d" type="StaticBody3D" parent="Map/Object/WallClimb2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Object/WallClimb2/StaticBody3d"]
+shape = SubResource("BoxShape3D_ulntr")
+
+[node name="PickableObject" parent="Map/Object" instance=ExtResource("3_x5572")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209867, 1.76516, -0.011162)
+gravity_scale = 0.2
+second_hand_grab = 1
+
+[node name="Table" type="MeshInstance3D" parent="Map/Object"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012659, 0.694909, -0.00466037)
+mesh = SubResource("BoxMesh_lofma")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Object/Table"]
+
+[node name="Collision3D" type="CollisionShape3D" parent="Map/Object/Table/StaticBody3D"]
+shape = SubResource("BoxShape3D_8sfdp")
+
+[node name="Floor" type="StaticBody3D" parent="Map/Object"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Object/Floor"]
 shape = SubResource("BoxShape3D_ysnmr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Object/Floor/CollisionShape3D"]
 mesh = SubResource("BoxMesh_7em54")
 
-[node name="XROrigin3D" parent="." instance=ExtResource("2_iwt21")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+[node name="Environment" type="Node3D" parent="Map"]
 
-[node name="MovementDirect" parent="XROrigin3D/LeftH" index="1" instance=ExtResource("3_5vv8y")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map/Environment"]
+environment = SubResource("Environment_5haf4")
 
-[editable path="XROrigin3D"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map/Environment"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+
+[node name="Water" type="MeshInstance3D" parent="Map/Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0)
+mesh = SubResource("PlaneMesh_j7rsq")
+
+[editable path="Player"]
+[editable path="Map/Object/PickableObject"]

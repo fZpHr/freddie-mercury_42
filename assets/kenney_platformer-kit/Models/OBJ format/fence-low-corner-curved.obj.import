@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxm4w4u1xcm2q"
+path="res://.godot/imported/fence-low-corner-curved.obj-dc230ec1c724ba3ea092e5283ec26d53.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence-low-corner-curved.obj-dc230ec1c724ba3ea092e5283ec26d53.mesh"]
+
+source_file="res://assets/kenney_platformer-kit/Models/OBJ format/fence-low-corner-curved.obj"
+dest_files=["res://.godot/imported/fence-low-corner-curved.obj-dc230ec1c724ba3ea092e5283ec26d53.mesh", "res://.godot/imported/fence-low-corner-curved.obj-dc230ec1c724ba3ea092e5283ec26d53.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
