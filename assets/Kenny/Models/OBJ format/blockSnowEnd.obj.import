@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjjifyx3ac7vx"
+path="res://.godot/imported/blockSnowEnd.obj-a4b7c8689988831ed99da1547c1b7181.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blockSnowEnd.obj-a4b7c8689988831ed99da1547c1b7181.mesh"]
+
+source_file="res://assets/Kenny/Models/OBJ format/blockSnowEnd.obj"
+dest_files=["res://.godot/imported/blockSnowEnd.obj-a4b7c8689988831ed99da1547c1b7181.mesh", "res://.godot/imported/blockSnowEnd.obj-a4b7c8689988831ed99da1547c1b7181.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

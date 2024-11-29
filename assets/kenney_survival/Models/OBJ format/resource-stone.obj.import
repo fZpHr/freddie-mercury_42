@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cisrmximv3i8m"
+path="res://.godot/imported/resource-stone.obj-cedba0836fc2a40bcfddee10398c4c77.mesh"
+
+[deps]
+
+files=["res://.godot/imported/resource-stone.obj-cedba0836fc2a40bcfddee10398c4c77.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/resource-stone.obj"
+dest_files=["res://.godot/imported/resource-stone.obj-cedba0836fc2a40bcfddee10398c4c77.mesh", "res://.godot/imported/resource-stone.obj-cedba0836fc2a40bcfddee10398c4c77.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

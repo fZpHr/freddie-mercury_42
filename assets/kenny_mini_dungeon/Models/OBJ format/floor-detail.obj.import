@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kcjyfk25xmxf"
+path="res://.godot/imported/floor-detail.obj-51d3ad57e4a29341d3e9485111a26434.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-detail.obj-51d3ad57e4a29341d3e9485111a26434.mesh"]
+
+source_file="res://assets/kenny_mini_dungeon/Models/OBJ format/floor-detail.obj"
+dest_files=["res://.godot/imported/floor-detail.obj-51d3ad57e4a29341d3e9485111a26434.mesh", "res://.godot/imported/floor-detail.obj-51d3ad57e4a29341d3e9485111a26434.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

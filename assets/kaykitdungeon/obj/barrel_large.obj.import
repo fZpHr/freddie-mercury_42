@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxpout4bi4d2m"
+path="res://.godot/imported/barrel_large.obj-19dc2ab9dc14f6c9261efe453cab8b9f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrel_large.obj-19dc2ab9dc14f6c9261efe453cab8b9f.mesh"]
+
+source_file="res://assets/kaykitdungeon/obj/barrel_large.obj"
+dest_files=["res://.godot/imported/barrel_large.obj-19dc2ab9dc14f6c9261efe453cab8b9f.mesh", "res://.godot/imported/barrel_large.obj-19dc2ab9dc14f6c9261efe453cab8b9f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

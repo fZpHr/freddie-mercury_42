@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ok7x746jcnph"
+path="res://.godot/imported/bottle.obj-e0d171f42485a9998f4015ffd957367f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bottle.obj-e0d171f42485a9998f4015ffd957367f.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/bottle.obj"
+dest_files=["res://.godot/imported/bottle.obj-e0d171f42485a9998f4015ffd957367f.mesh", "res://.godot/imported/bottle.obj-e0d171f42485a9998f4015ffd957367f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

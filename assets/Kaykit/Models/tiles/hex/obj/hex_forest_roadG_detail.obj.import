@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xvxx6sk03ng2"
+path="res://.godot/imported/hex_forest_roadG_detail.obj-7ce2c2a938bad5dc6f2dd218ac436e0d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_forest_roadG_detail.obj-7ce2c2a938bad5dc6f2dd218ac436e0d.mesh"]
+
+source_file="res://assets/Kaykit/Models/tiles/hex/obj/hex_forest_roadG_detail.obj"
+dest_files=["res://.godot/imported/hex_forest_roadG_detail.obj-7ce2c2a938bad5dc6f2dd218ac436e0d.mesh", "res://.godot/imported/hex_forest_roadG_detail.obj-7ce2c2a938bad5dc6f2dd218ac436e0d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

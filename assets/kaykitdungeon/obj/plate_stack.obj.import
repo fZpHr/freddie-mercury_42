@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wb2d0swba1rq"
+path="res://.godot/imported/plate_stack.obj-94e61105adb2fb159ed5227484d45eea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plate_stack.obj-94e61105adb2fb159ed5227484d45eea.mesh"]
+
+source_file="res://assets/kaykitdungeon/obj/plate_stack.obj"
+dest_files=["res://.godot/imported/plate_stack.obj-94e61105adb2fb159ed5227484d45eea.mesh", "res://.godot/imported/plate_stack.obj-94e61105adb2fb159ed5227484d45eea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

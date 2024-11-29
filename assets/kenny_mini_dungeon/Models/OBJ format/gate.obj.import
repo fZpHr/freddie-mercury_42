@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4x2r2xri7f40"
+path="res://.godot/imported/gate.obj-5c5db3d86fa18fc40fd66356a8c33db5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gate.obj-5c5db3d86fa18fc40fd66356a8c33db5.mesh"]
+
+source_file="res://assets/kenny_mini_dungeon/Models/OBJ format/gate.obj"
+dest_files=["res://.godot/imported/gate.obj-5c5db3d86fa18fc40fd66356a8c33db5.mesh", "res://.godot/imported/gate.obj-5c5db3d86fa18fc40fd66356a8c33db5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c3yyton30bn7x"
+path="res://.godot/imported/workbench-anvil.obj-ce219df16234485ab7719f27b44b4edc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/workbench-anvil.obj-ce219df16234485ab7719f27b44b4edc.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/workbench-anvil.obj"
+dest_files=["res://.godot/imported/workbench-anvil.obj-ce219df16234485ab7719f27b44b4edc.mesh", "res://.godot/imported/workbench-anvil.obj-ce219df16234485ab7719f27b44b4edc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

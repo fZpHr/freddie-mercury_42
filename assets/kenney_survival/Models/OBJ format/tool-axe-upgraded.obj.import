@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cafq206pigsv4"
+path="res://.godot/imported/tool-axe-upgraded.obj-9edbb5a75a8994a719bbd72efb095425.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tool-axe-upgraded.obj-9edbb5a75a8994a719bbd72efb095425.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/tool-axe-upgraded.obj"
+dest_files=["res://.godot/imported/tool-axe-upgraded.obj-9edbb5a75a8994a719bbd72efb095425.mesh", "res://.godot/imported/tool-axe-upgraded.obj-9edbb5a75a8994a719bbd72efb095425.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ekxipdl6htbs"
+path="res://.godot/imported/character-ghost.obj-c3924ddd2933db1ea59afedd92f05e76.mesh"
+
+[deps]
+
+files=["res://.godot/imported/character-ghost.obj-c3924ddd2933db1ea59afedd92f05e76.mesh"]
+
+source_file="res://assets/kenney_grave/Models/OBJ format/character-ghost.obj"
+dest_files=["res://.godot/imported/character-ghost.obj-c3924ddd2933db1ea59afedd92f05e76.mesh", "res://.godot/imported/character-ghost.obj-c3924ddd2933db1ea59afedd92f05e76.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8udy1s3f2dnx"
+path="res://.godot/imported/hex_forest_waterC.obj-e254e7a4f313cbb612e1299bfc8e3bee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_forest_waterC.obj-e254e7a4f313cbb612e1299bfc8e3bee.mesh"]
+
+source_file="res://assets/Kaykit/Models/tiles/hex/obj/hex_forest_waterC.obj"
+dest_files=["res://.godot/imported/hex_forest_waterC.obj-e254e7a4f313cbb612e1299bfc8e3bee.mesh", "res://.godot/imported/hex_forest_waterC.obj-e254e7a4f313cbb612e1299bfc8e3bee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

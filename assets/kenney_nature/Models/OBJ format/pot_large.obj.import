@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2s4mjgjcacey"
+path="res://.godot/imported/pot_large.obj-26c0660a9f259640154f506e4bf6241e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pot_large.obj-26c0660a9f259640154f506e4bf6241e.mesh"]
+
+source_file="res://assets/kenney_nature/Models/OBJ format/pot_large.obj"
+dest_files=["res://.godot/imported/pot_large.obj-26c0660a9f259640154f506e4bf6241e.mesh", "res://.godot/imported/pot_large.obj-26c0660a9f259640154f506e4bf6241e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

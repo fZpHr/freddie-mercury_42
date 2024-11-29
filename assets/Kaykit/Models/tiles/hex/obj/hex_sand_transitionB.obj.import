@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dk16npxp23xj6"
+path="res://.godot/imported/hex_sand_transitionB.obj-d7c2350375af5c9fb891d804901d5666.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_sand_transitionB.obj-d7c2350375af5c9fb891d804901d5666.mesh"]
+
+source_file="res://assets/Kaykit/Models/tiles/hex/obj/hex_sand_transitionB.obj"
+dest_files=["res://.godot/imported/hex_sand_transitionB.obj-d7c2350375af5c9fb891d804901d5666.mesh", "res://.godot/imported/hex_sand_transitionB.obj-d7c2350375af5c9fb891d804901d5666.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

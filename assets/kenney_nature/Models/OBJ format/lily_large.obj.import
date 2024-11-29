@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2i0alo6m475p"
+path="res://.godot/imported/lily_large.obj-4dd9be2294d187984434961fe30842bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lily_large.obj-4dd9be2294d187984434961fe30842bd.mesh"]
+
+source_file="res://assets/kenney_nature/Models/OBJ format/lily_large.obj"
+dest_files=["res://.godot/imported/lily_large.obj-4dd9be2294d187984434961fe30842bd.mesh", "res://.godot/imported/lily_large.obj-4dd9be2294d187984434961fe30842bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

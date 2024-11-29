@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e67tpb62y1em"
+path="res://.godot/imported/iron-fence-curve.obj-006f4d5bb3d8411689824c070dc317b0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/iron-fence-curve.obj-006f4d5bb3d8411689824c070dc317b0.mesh"]
+
+source_file="res://assets/kenney_grave/Models/OBJ format/iron-fence-curve.obj"
+dest_files=["res://.godot/imported/iron-fence-curve.obj-006f4d5bb3d8411689824c070dc317b0.mesh", "res://.godot/imported/iron-fence-curve.obj-006f4d5bb3d8411689824c070dc317b0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

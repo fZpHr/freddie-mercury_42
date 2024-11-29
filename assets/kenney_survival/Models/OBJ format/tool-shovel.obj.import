@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddjqbq3y2nvj8"
+path="res://.godot/imported/tool-shovel.obj-1b93a0820b248bb8b0a438a9c862bf4d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tool-shovel.obj-1b93a0820b248bb8b0a438a9c862bf4d.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/tool-shovel.obj"
+dest_files=["res://.godot/imported/tool-shovel.obj-1b93a0820b248bb8b0a438a9c862bf4d.mesh", "res://.godot/imported/tool-shovel.obj-1b93a0820b248bb8b0a438a9c862bf4d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

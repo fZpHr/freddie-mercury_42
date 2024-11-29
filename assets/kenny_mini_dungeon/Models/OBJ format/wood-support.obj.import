@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://di0jpml0olmo8"
+path="res://.godot/imported/wood-support.obj-4f591e178eb8a087c5afde7f6b90116c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wood-support.obj-4f591e178eb8a087c5afde7f6b90116c.mesh"]
+
+source_file="res://assets/kenny_mini_dungeon/Models/OBJ format/wood-support.obj"
+dest_files=["res://.godot/imported/wood-support.obj-4f591e178eb8a087c5afde7f6b90116c.mesh", "res://.godot/imported/wood-support.obj-4f591e178eb8a087c5afde7f6b90116c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pt50fhtooj3g"
+path="res://.godot/imported/floor-detail.obj-cd3a75105cd53af32406e73ffe338cdd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor-detail.obj-cd3a75105cd53af32406e73ffe338cdd.mesh"]
+
+source_file="res://assets/kenny_arena/Models/OBJ format/floor-detail.obj"
+dest_files=["res://.godot/imported/floor-detail.obj-cd3a75105cd53af32406e73ffe338cdd.mesh", "res://.godot/imported/floor-detail.obj-cd3a75105cd53af32406e73ffe338cdd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bphcnavut763x"
+path="res://.godot/imported/tool-hammer.obj-8cce3f6bf107939b33c044749748f88a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tool-hammer.obj-8cce3f6bf107939b33c044749748f88a.mesh"]
+
+source_file="res://assets/kenney_survival/Models/OBJ format/tool-hammer.obj"
+dest_files=["res://.godot/imported/tool-hammer.obj-8cce3f6bf107939b33c044749748f88a.mesh", "res://.godot/imported/tool-hammer.obj-8cce3f6bf107939b33c044749748f88a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

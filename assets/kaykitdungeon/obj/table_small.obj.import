@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://oy4r33lmgdjo"
+path="res://.godot/imported/table_small.obj-9d9a684c1fcd34d3960d441a3711d65d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/table_small.obj-9d9a684c1fcd34d3960d441a3711d65d.mesh"]
+
+source_file="res://assets/kaykitdungeon/obj/table_small.obj"
+dest_files=["res://.godot/imported/table_small.obj-9d9a684c1fcd34d3960d441a3711d65d.mesh", "res://.godot/imported/table_small.obj-9d9a684c1fcd34d3960d441a3711d65d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

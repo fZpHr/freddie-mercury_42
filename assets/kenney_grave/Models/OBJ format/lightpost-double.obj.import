@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://de80b2dc4fnom"
+path="res://.godot/imported/lightpost-double.obj-3849c87e084811456301b18fe93170c6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lightpost-double.obj-3849c87e084811456301b18fe93170c6.mesh"]
+
+source_file="res://assets/kenney_grave/Models/OBJ format/lightpost-double.obj"
+dest_files=["res://.godot/imported/lightpost-double.obj-3849c87e084811456301b18fe93170c6.mesh", "res://.godot/imported/lightpost-double.obj-3849c87e084811456301b18fe93170c6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
