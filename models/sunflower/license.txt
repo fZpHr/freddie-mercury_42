@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sunflower
+* source:	https://sketchfab.com/3d-models/sunflower-d9925ea428a441deb34de06434b4bf1d
+* author:	Cosmic_dust (https://sketchfab.com/Cosmic_dust)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sunflower" (https://sketchfab.com/3d-models/sunflower-d9925ea428a441deb34de06434b4bf1d) by Cosmic_dust (https://sketchfab.com/Cosmic_dust) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
