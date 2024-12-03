@@ -1,13 +1,16 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=34 format=3 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ls2uq"]
 [ext_resource type="PackedScene" uid="uid://k51uskse8var" path="res://xr_origin_3d.tscn" id="2_iwt21"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="3_a5c7j"]
 [ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="3_f67ss"]
 [ext_resource type="PackedScene" uid="uid://l0rqy7e41mmj" path="res://cube.tscn" id="3_x5572"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_75tad"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="4_xcu5g"]
 [ext_resource type="PackedScene" uid="uid://iovy60mjnlxo" path="res://RockClimbObject.tscn" id="6_khfoy"]
 [ext_resource type="Script" path="res://wall_fade.gd" id="7_4n0p8"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_ab8jq"]
+[ext_resource type="PackedScene" uid="uid://0sx4gl4pc5gc" path="res://menu.tscn" id="8_4tuwj"]
 [ext_resource type="Shader" path="res://water.gdshader" id="8_j8s71"]
 [ext_resource type="Script" path="res://door.gd" id="8_mqeje"]
 
@@ -108,13 +111,29 @@ fov = 90.8917
 
 [node name="MovementClimb" parent="Player/LeftH" index="3" instance=ExtResource("3_f67ss")]
 
+[node name="FunctionPointer" parent="Player/LeftH" index="4" instance=ExtResource("4_75tad")]
+show_laser = 2
+laser_length = 1
+
 [node name="MovementJump" parent="Player/RightH" index="3" instance=ExtResource("3_a5c7j")]
 jump_button_action = "ax_button"
 
 [node name="MovementClimb" parent="Player/RightH" index="4" instance=ExtResource("3_f67ss")]
 
+[node name="FunctionPointer" parent="Player/RightH" index="5" instance=ExtResource("4_75tad")]
+show_laser = 2
+laser_length = 1
+
 [node name="PlayerBody" parent="Player" index="3"]
 physics = SubResource("Resource_4ahhv")
+
+[node name="Menu" parent="Player" instance=ExtResource("7_ab8jq")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.0136616, 0, -0.721344)
+screen_size = Vector2(1280, 768)
+scene = ExtResource("8_4tuwj")
+viewport_size = Vector2(1280, 768)
+unshaded = true
+scene_properties_keys = PackedStringArray()
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
