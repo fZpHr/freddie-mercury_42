@@ -33,7 +33,7 @@ size = Vector2(1280, 768)
 [sub_resource type="ViewportTexture" id="ViewportTexture_ejcia"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37xyn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hu2n"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
@@ -124,7 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 script = ExtResource("1_ls2uq")
 
 [node name="Player" parent="." instance=ExtResource("2_iwt21")]
-transform = Transform3D(0.999821, 0, -0.0189357, 0, 1, 0, 0.0189357, 0, 0.999821, 0, 1.49018, 0.569825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49018, 0.569825)
 
 [node name="XRCamera3D" parent="Player" index="0"]
 fov = 90.8917
@@ -167,7 +167,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_tuml0")
-surface_material_override/0 = SubResource("StandardMaterial3D_37xyn")
+surface_material_override/0 = SubResource("StandardMaterial3D_8hu2n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881

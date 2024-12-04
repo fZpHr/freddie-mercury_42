@@ -105,8 +105,8 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 
-	menu.visible = false
-	menu.enabled = false
+	#menu.visible = false
+	#menu.enabled = false
 
 	# Create the grab collision shape
 	_grab_collision = CollisionShape3D.new()
