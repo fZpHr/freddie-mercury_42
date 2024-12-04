@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://0sx4gl4pc5gc"]
+[gd_scene load_steps=2 format=3 uid="uid://0sx4gl4pc5gc"]
+
+[ext_resource type="Script" path="res://quit.gd" id="1_hh6fc"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +46,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+[node name="Save" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Save"
@@ -62,3 +65,4 @@ text = "Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+script = ExtResource("1_hh6fc")

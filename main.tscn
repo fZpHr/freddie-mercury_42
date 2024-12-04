@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=39 format=3 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ls2uq"]
 [ext_resource type="PackedScene" uid="uid://k51uskse8var" path="res://xr_origin_3d.tscn" id="2_iwt21"]
@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="4_xcu5g"]
 [ext_resource type="PackedScene" uid="uid://iovy60mjnlxo" path="res://RockClimbObject.tscn" id="6_khfoy"]
 [ext_resource type="Script" path="res://wall_fade.gd" id="7_4n0p8"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_ab8jq"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="7_p7lfp"]
 [ext_resource type="PackedScene" uid="uid://0sx4gl4pc5gc" path="res://menu.tscn" id="8_4tuwj"]
 [ext_resource type="Shader" path="res://water.gdshader" id="8_j8s71"]
-[ext_resource type="Script" path="res://door.gd" id="8_mqeje"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="9_kloiy"]
 
 [sub_resource type="Resource" id="Resource_4ahhv"]
 script = ExtResource("4_xcu5g")
@@ -25,6 +25,26 @@ jump_max_slope = 45.0
 jump_velocity = 3.0
 bounciness = 0.0
 bounce_threshold = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_tuml0"]
+resource_local_to_scene = true
+size = Vector2(1280, 768)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ejcia"]
+viewport_path = NodePath("Player/Menu/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37xyn"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_ejcia")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fw2og"]
+resource_local_to_scene = true
+size = Vector3(1280, 768, 0.02)
+
+[sub_resource type="GDScript" id="GDScript_2jiic"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_407md"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -127,13 +147,41 @@ laser_length = 1
 [node name="PlayerBody" parent="Player" index="3"]
 physics = SubResource("Resource_4ahhv")
 
-[node name="Menu" parent="Player" instance=ExtResource("7_ab8jq")]
-transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.0136616, 0, -0.721344)
+[node name="Menu" type="Node3D" parent="Player"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.0136616, 1.37895, -0.721344)
+script = ExtResource("7_p7lfp")
 screen_size = Vector2(1280, 768)
 scene = ExtResource("8_4tuwj")
 viewport_size = Vector2(1280, 768)
+alpha_scissor_threshold = 0.25
 unshaded = true
+filter = true
 scene_properties_keys = PackedStringArray()
+
+[node name="Viewport" type="SubViewport" parent="Player/Menu"]
+disable_3d = true
+transparent_bg = true
+gui_embed_subwindows = true
+size = Vector2i(1280, 768)
+render_target_update_mode = 1
+
+[node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
+mesh = SubResource("QuadMesh_tuml0")
+surface_material_override/0 = SubResource("StandardMaterial3D_37xyn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
+collision_layer = 5242881
+collision_mask = 0
+script = ExtResource("9_kloiy")
+screen_size = Vector2(1280, 768)
+viewport_size = Vector2(1280, 768)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Menu/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+shape = SubResource("BoxShape3D_fw2og")
+
+[node name="Node3D" type="Node3D" parent="Player/Menu"]
+script = SubResource("GDScript_2jiic")
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
@@ -223,7 +271,6 @@ transform = Transform3D(1, 0, 1.77636e-14, 0, 1, 0, -1.77636e-14, 0, 1, 0, -6.49
 shape = SubResource("BoxShape3D_8n137")
 
 [node name="DoorComponent" type="Node" parent="Map/Room1/Walls/DoorWall/AnimatableBody3D"]
-script = ExtResource("8_mqeje")
 
 [node name="InteractionComponent" type="Node" parent="Map/Room1/Walls/DoorWall/AnimatableBody3D"]
 

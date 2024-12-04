@@ -40,6 +40,8 @@ const MAX_GRAB_DISTANCE2: float = 1000000.0
 ## Action controller button
 @export var action_button_action : String = "trigger_click"
 
+@export var menu_button_action : String = "menu_button"
+
 ## Grab distance
 @export var grab_distance : float = 0.3: set = _set_grab_distance
 
@@ -94,12 +96,17 @@ var _ranged_collision : CollisionShape3D
 func is_xr_class(name : String) -> bool:
 	return name == "XRToolsFunctionPickup"
 
+var menu_visible = false
+@onready var menu: Node3D = get_node("../../Menu")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Skip creating grab-helpers if in the editor
 	if Engine.is_editor_hint():
 		return
+
+	menu.visible = false
+	menu.enabled = false
 
 	# Create the grab collision shape
 	_grab_collision = CollisionShape3D.new()
@@ -414,6 +421,10 @@ func _on_button_pressed(p_button) -> void:
 	if p_button == action_button_action:
 		if is_instance_valid(picked_up_object) and picked_up_object.has_method("action"):
 			picked_up_object.action()
+	if p_button == menu_button_action:
+		menu_visible = not menu_visible
+		menu.visible = menu_visible
+		menu.enabled = menu_visible
 
 
 func _on_button_released(_p_button) -> void:

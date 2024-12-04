@@ -23,7 +23,6 @@ func _toggle_all_visibility() -> void:
 
 # Toggle visibility of all relevant children
 func toggle_visibility_of_all() -> void:
-	print("Toggling visibility of all relevant children")
 	
 	# Loop through all child nodes of the parent node
 	for child in get_children():
