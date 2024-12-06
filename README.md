@@ -49,6 +49,10 @@ Ce document contient la liste des tâches et des contraintes pour le développem
 - [ ] Ajouter un système de sauvegarde et de chargement pour reprendre le jeu plus tard.
 
 
+###Thing to fix:
+- water glitch long distance
 
-
-
+###Thing to add maybe:
+- sound effect/environement
+- bird
+- timer in ui (speedrun tier)
