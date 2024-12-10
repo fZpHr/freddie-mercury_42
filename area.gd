@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var wall = get_node("../../").get_node("Walls")
+
 var target_positions = []
 var correct_positions = {
 	&"Flower1": "Area3D1",
