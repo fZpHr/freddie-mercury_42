@@ -2,12 +2,9 @@ Fix text to be more readable
 Fix glitching cube
 TP transition
 
-interacts with rotative elements, on one or more axes, like doors, lockpads,
+◦ interacts with rotative elements, on one or more axes, like doors, lockpads,
 bottle caps...
 ◦ interacts with elements by push/pull.
-• The gamer can make some objects interact with other objects: a key with a keylock,
-or smoke with fire-detection, water with electricity... .
-
 
 Bonus
 Anything that makes the game more professional can be part of the bonuses. Some

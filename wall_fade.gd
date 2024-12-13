@@ -17,3 +17,10 @@ func toggle_visibility_of_all() -> void:
 				child.visible = environment
 			else:
 				child.visible = visible_state
+
+	# Disable collisions on specific walls
+	for child in get_children():
+		if child is StaticBody3D and child.name.begins_with("Wall"):
+			for grandchild in child.get_children():
+				if grandchild is CollisionShape3D:
+					grandchild.disabled = environment
