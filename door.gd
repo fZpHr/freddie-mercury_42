@@ -1,4 +1,4 @@
-class_name DoorComponent
+#class_name DoorComponent
 extends Node
 
 @export var direction: Vector3 = Vector3(0, 1, 0)

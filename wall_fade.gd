@@ -1,4 +1,4 @@
-class_name WallManager
+#class_name WallManager
 extends Node3D
 
 var visible_state: bool = true 

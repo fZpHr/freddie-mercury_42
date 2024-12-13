@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c353771xd3e1c"]
+[gd_scene load_steps=3 format=3 uid="uid://c353771xd3e1c"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_4wsxg"]
 [ext_resource type="Script" path="res://quit.gd" id="1_hh6fc"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -45,11 +46,17 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
+script = ExtResource("1_4wsxg")
 
 [node name="Save" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Save"
+
+[node name="Start" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Start"
 
 [node name="Load" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
@@ -57,7 +64,6 @@ theme_override_font_sizes/font_size = 48
 text = "Load"
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Settings"

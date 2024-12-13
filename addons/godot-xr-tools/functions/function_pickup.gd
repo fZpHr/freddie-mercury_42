@@ -96,8 +96,13 @@ var _ranged_collision : CollisionShape3D
 func is_xr_class(name : String) -> bool:
 	return name == "XRToolsFunctionPickup"
 
-var menu_visible = false
 @onready var menu: Node3D = get_node("../../Menu")
+@onready var player: XROrigin3D = get_node("/root/main/Player")
+
+func toggle_menu():
+	player.menu_visible = not player.menu_visible
+	menu.visible = player.menu_visible
+	menu.enabled = player.menu_visible
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -422,9 +427,7 @@ func _on_button_pressed(p_button) -> void:
 		if is_instance_valid(picked_up_object) and picked_up_object.has_method("action"):
 			picked_up_object.action()
 	if p_button == menu_button_action:
-		menu_visible = not menu_visible
-		menu.visible = menu_visible
-		menu.enabled = menu_visible
+		toggle_menu()
 
 
 func _on_button_released(_p_button) -> void:

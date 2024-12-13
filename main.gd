@@ -1,10 +1,11 @@
-
 extends Node3D
-
 
 var xr_interface: XRInterface
 
 func _ready():
+	# Initialize XR interface
+	$Player.position = Vector3(0, 42.249, 2.648)
+	
 	xr_interface = XRServer.find_interface("OpenXR")
 	
 	if xr_interface:

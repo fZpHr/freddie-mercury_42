@@ -12,7 +12,7 @@ var correct_positions = {
 var puzzle_solved = false
 
 func _ready():
-	print("Initializing flower game...")
+	#print("Initializing flower game...")
 	for i in range(1, 5):
 		var static_body = get_node("StaticBody3D" + str(i))
 		if static_body:
@@ -26,7 +26,7 @@ func _ready():
 			area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body: Node3D):
-	print("Body entered: ", body.name)
+	#print("Body entered: ", body.name)
 	var area_num = get_area_number(body)
 	if area_num != -1 and area_num <= len(target_positions):
 		body.position = target_positions[area_num - 1]
@@ -47,7 +47,7 @@ func _on_body_exited(body: Node3D):
 
 func check_all_positions(body: Node3D):
 	var all_correct = true
-	print("\nChecking flower positions:")
+	#print("\nChecking flower positions:")
 	
 	var parent = body.get_parent()
 	var areas = parent.get_children().filter(func(node): return node.name.begins_with("Area"))
@@ -61,7 +61,7 @@ func check_all_positions(body: Node3D):
 					current_area = area.name
 					break
 					
-			print(str(flower_name) + " is in " + current_area + ", should be in " + correct_positions[flower_name])
+			#print(str(flower_name) + " is in " + current_area + ", should be in " + correct_positions[flower_name])
 			if current_area != correct_positions[flower_name]:
 				all_correct = false
 	
