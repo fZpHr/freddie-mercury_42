@@ -1,4 +1,3 @@
-class_name WallManager
 extends Node3D
 
 var environment: bool = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=335 format=4 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=336 format=4 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://custom/main.gd" id="1_ls2uq"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="3_20ghv"]
@@ -71,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://bbiwigk1viteh" path="res://models/image/Screenshot from 2024-12-12 17-40-20.png" id="77_egrj2"]
 [ext_resource type="Texture2D" uid="uid://cl6dt23i0n6aq" path="res://models/textures/1-skybox-studio-hyper-realistic-space-env-hd-1(1)(1).jpg" id="78_5gtu0"]
 [ext_resource type="Texture2D" uid="uid://d041blrvr8gum" path="res://models/image/Screenshot from 2024-12-12 15-26-32.png" id="80_76smq"]
+[ext_resource type="PackedScene" path="res://detector.tscn" id="80_jpwxn"]
 [ext_resource type="Texture2D" uid="uid://qcutw42oul62" path="res://models/image/Screenshot from 2024-12-12 15-28-32.png" id="81_gwddp"]
 [ext_resource type="Script" path="res://scenes/keypad/Keypad.gd" id="85_bfekr"]
 [ext_resource type="AudioStream" uid="uid://dhe7h3g35g7vn" path="res://assets/pressed_key.wav" id="86_xyb7g"]
@@ -102,14 +103,14 @@ bounce_threshold = 1.0
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_53xrq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oaj8m"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08sq8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fonqv"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_53xrq")
+albedo_texture = SubResource("ViewportTexture_oaj8m")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -2545,7 +2546,7 @@ physics = SubResource("Resource_4ahhv")
 
 [node name="Screen" parent="Player/Menu" index="1"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_08sq8")
+surface_material_override/0 = SubResource("StandardMaterial3D_fonqv")
 
 [node name="CollisionShape3D" parent="Player/Menu/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_2mhkk")
@@ -3215,7 +3216,6 @@ skeleton = NodePath("../Floor/CollisionShape3D")
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/Room1/Walls/Environment/sand"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room1/Walls/Environment/sand/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_dn1oa")
 
 [node name="Floor" type="StaticBody3D" parent="Map/Room1/Walls/Environment"]
@@ -4678,6 +4678,10 @@ transform = Transform3D(-0.0375, 0, -3.27835e-09, 0, 0.0375, 0, 3.27835e-09, 0, 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/Room2/Stand/Sketchfab_model/deef399fae8b47e3ad31bd8b29909661_obj_cleaner_materialmerger_gles" index="1"]
 
 [node name="Hub" parent="Map" instance=ExtResource("75_vhoeq")]
+
+[node name="ARToggle" parent="Map/Hub" instance=ExtResource("80_jpwxn")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34625, 5.08542, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ulirk")

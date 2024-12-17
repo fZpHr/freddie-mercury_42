@@ -32,6 +32,7 @@ func _on_body_entered(body: Node3D):
 	if area_num != -1 and area_num <= len(target_positions):
 		body.position = target_positions[area_num - 1]
 		body.rotation_degrees = Vector3(90, 0, 180)
+		#body.
 	check_all_positions(body)
 
 func get_area_number(body: Node3D) -> int:
