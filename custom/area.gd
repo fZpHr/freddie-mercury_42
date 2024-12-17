@@ -1,14 +1,14 @@
 extends Node3D
 
 @onready var wall = get_node("../../").get_node("Walls")
-@onready var door: DoorComponent = $"../../Walls/DoorWall/AnimatableBody3D/DoorComponent"
+@onready var door: DoorComponent = $"../../Walls/WallDoor/AnimatableBody3D/DoorComponent"
 
 var target_positions = []
 var correct_positions = {
 	&"Flower1": "Area3D1",
-	#&"Flower2": "Area3D3",
-	#&"Flower3": "Area3D2",
-	#&"Flower4": "Area3D4"
+	&"Flower2": "Area3D3",
+	&"Flower3": "Area3D2",
+	&"Flower4": "Area3D4"
 }
 var puzzle_solved = false
 
@@ -30,8 +30,17 @@ func _on_body_entered(body: Node3D):
 	print("Body entered: ", body.name)
 	var area_num = get_area_number(body)
 	if area_num != -1 and area_num <= len(target_positions):
+		# Position et rotation
 		body.position = target_positions[area_num - 1]
 		body.rotation_degrees = Vector3(90, 0, 180)
+		
+		# Réinitialisation de la vélocité
+		if body is RigidBody3D:
+			body.linear_velocity = Vector3.ZERO
+			body.angular_velocity = Vector3.ZERO
+		elif body is CharacterBody3D:
+			body.velocity = Vector3.ZERO
+		
 	check_all_positions(body)
 
 func get_area_number(body: Node3D) -> int:
@@ -72,8 +81,15 @@ func check_all_positions(body: Node3D):
 		print("Puzzle completed! Toggling walls...")
 		puzzle_solved = true
 		wall.toggle_visibility_of_all()
+		# Activer l'animation de la porte
+		if door:
+			door.is_active = true
+			door.start_door_cycle()
 	elif !all_correct and puzzle_solved:
 		print("Puzzle broken! Reverting walls...")
 		puzzle_solved = false
 		wall.toggle_visibility_of_all()
-		door.open_door()
+		# Désactiver l'animation de la porte et la fermer
+		if door:
+			door.is_active = false
+			door.stop_door_cycle()

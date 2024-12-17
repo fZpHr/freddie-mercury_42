@@ -15,6 +15,7 @@ signal on_keypad_press
 var pressed_audio: AudioStreamPlayer3D
 var correct_audio: AudioStreamPlayer3D
 var wrong_audio: AudioStreamPlayer3D
+var door_open: AudioStreamPlayer3D
 
 # UI nodes
 var keys: Node3D
@@ -27,6 +28,7 @@ func _ready():
 	pressed_audio = $PressedAudioStream
 	correct_audio = $CorrectAudioStream
 	wrong_audio = $WrongAudioStream
+	door_open = $"Heavy-pressurased-door"
 	print("Audio nodes loaded:", pressed_audio, correct_audio, wrong_audio)
 	
 	# Get UI nodes
@@ -114,6 +116,8 @@ func trigger_success_feedback():
 			
 		if anim_player:
 			anim_player.play("door_open")
+			if door_open:
+				door_open.play()
 			print("Animation lancée")
 	else:
 		print("Door already open")
