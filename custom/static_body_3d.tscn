@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj7334jxjifxg"]
+
+[ext_resource type="Script" path="res://static_body_3d.gd" id="1_5tcul"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vavu3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8dct"]
+albedo_color = Color(1, 0.00392157, 0.207843, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ioht7"]
+material = SubResource("StandardMaterial3D_o8dct")
+
+[node name="staticBody3d" type="StaticBody3D"]
+script = ExtResource("1_5tcul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vavu3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ioht7")
+skeleton = NodePath("../CollisionShape3D")

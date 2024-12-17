@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/collision_hand.gd" id="1_t5acd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bv7in"]
-size = Vector3(0.045, 0.075, 0.1)
+size = Vector3(0.0198413, 0.0179227, 0.0905212)
 
 [node name="CollisionHandLeft" type="AnimatableBody3D"]
 collision_layer = 131072

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Test NPC v2 Fbx
+* source:	https://sketchfab.com/3d-models/test-npc-v2-fbx-55108365ace841c8a5c1523f17689c93
+* author:	tortswari (https://sketchfab.com/tortswari)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Test NPC v2 Fbx" (https://sketchfab.com/3d-models/test-npc-v2-fbx-55108365ace841c8a5c1523f17689c93) by tortswari (https://sketchfab.com/tortswari) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

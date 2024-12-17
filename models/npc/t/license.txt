@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bull Man
+* source:	https://sketchfab.com/3d-models/bull-man-395b582fe83a4218ba5717b6498e072b
+* author:	bullwa (https://sketchfab.com/bullwa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bull Man" (https://sketchfab.com/3d-models/bull-man-395b582fe83a4218ba5717b6498e072b) by bullwa (https://sketchfab.com/bullwa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
