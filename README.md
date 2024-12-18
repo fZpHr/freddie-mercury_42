@@ -1,6 +1,6 @@
 # 🎮 VR Escape Game
 
-Freddie-MercuryIn is a brand new concept in VR! The player will have to resolve subtle puzzles and mysteries to unlock new steps and finally break free!
+Freddie-Mercury is a brand new concept in VR! The player will have to resolve subtle puzzles and mysteries to unlock new steps and finally break free!
 Ok, it’s an escape game in VR..
 
 ## ✅ Development Progress
