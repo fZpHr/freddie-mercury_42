@@ -76,8 +76,6 @@ Developed with Godot Engine
 
 ### Immediate Priorities
 - [ ] Implement end screen
-- [ ] Add more visual feedback for interactions
-
 
 ### **Bonus Part**
 - [ ] Handle compatibility with multiple VR headsets
