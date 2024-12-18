@@ -1,58 +1,92 @@
-# Escape Game VR - To Do List
+# 🎮 VR Escape Game
 
-Ce document contient la liste des tâches et des contraintes pour le développement de votre jeu d'évasion en VR. Cochez chaque case au fur et à mesure de l'avancement des différentes étapes du projet.
+Freddie-MercuryIn is a brand new concept in VR! The player will have to resolve subtle puzzles and mysteries to unlock new steps and finally break free!
+Ok, it’s an escape game in VR..
 
-## 1. **Compatibilité VR**
-- [ ] Le jeu est compatible avec au moins un casque VR : Vive, Meta/Oculus, Apple/VisioPro, Playstation, ou tout autre casque avec suivi des mains.
+## ✅ Development Progress
 
-## 2. **Lobby et Zone de Démarrage**
-- [ ] Créer une zone de démarrage (lobby) avant le jeu.
-- [ ] Afficher les contrôles et options dans le lobby.
-- [ ] Intégrer un tutoriel interactif pour expliquer les mécaniques du jeu.
+### VR Compatibility
+- [x] Compatible with Oculus Quest 2
+- [ ] Compatible with other VR headsets
 
-## 3. **Transition vers le Premier Niveau**
-- [ ] Le joueur peut entrer dans le premier niveau via une action dans le lobby (ex : toucher un bouton, ouvrir une porte, etc.).
-- [ ] Ajouter une transition visuelle appropriée entre le lobby et le niveau (ex : fondu ou animation de chargement).
+### Lobby and Start
+- [x] Starting area / Lobby
+- [x] Interactive tutorial
+- [x] Controls menu
+- [x] Smooth transition to level 1
 
-## 4. **Éléments Narratifs**
-- [ ] Ajouter des éléments dans le lobby et le premier niveau qui commencent à raconter l’histoire du jeu (par exemple, des objets, des notes, des indices). 
-- [ ] Créer une atmosphère immersive dans le lobby pour que le joueur comprenne qu’il est "emprisonné" et doit s’échapper.
+### Gameplay
+- [x] VR movement system
+- [x] Object manipulation
+- [x] Door/lock interaction
+- [x] Interactive puzzles
+- [x] Automatic events
+- [x] Save system
 
-## 5. **Mécaniques de Jeu**
-- [ ] Le joueur peut se déplacer dans l’espace du jeu (téléportation ou déplacement libre).
-- [ ] Le joueur peut interagir avec des objets : saisir, manipuler, tourner, passer d’une main à l’autre, laisser tomber ou jeter des objets.
-- [ ] Le joueur peut interagir avec des éléments rotatifs (portes, serrures, interrupteurs, etc.).
-- [ ] Le joueur peut pousser ou tirer certains objets ou éléments.
-- [ ] Créer des interactions entre objets : clé avec serrure, eau avec électricité, etc.
+### Levels
+- [x] Complete lobby
+- [x] Level 1 (Main)
+- [x] Level 2 (Final room)
+- [ ] End screen
 
-## 6. **Événements Automatiques**
-- [ ] Des actions du joueur déclenchent des événements automatiques (par exemple, ouvrir une porte, allumer une lumière, déclencher un piège…).
+### Atmosphere
+- [x] Ambient sounds
+- [x] Sound effects
+- [x] Background music
+- [x] Visual effects
+- [x] Environmental storytelling
 
-## 7. **Ambiance Sonore**
-- [ ] Intégrer des sons cohérents et adaptés à chaque événement et à l’ambiance générale du jeu.
+### Optimization
+- [x] Stable FPS
+- [x] Optimized VR comfort
+- [x] Smooth controls
+- [x] Performance optimization
 
-## 8. **Contenus du Jeu**
-- [ ] Le jeu contient au moins 2 niveaux.
-- [ ] Le jeu a une fin définie (par exemple, un niveau final, un écran de fin ou retour au lobby).
+## 🛠️ Installation
 
-## 9. **Polish et Confort VR**
-- [ ] Assurer que le jeu est fluide avec un taux de FPS stable.
-- [ ] Tester et ajuster le confort VR pour éviter le mal de mer (réduire les nausées liées au mouvement).
-- [ ] Les contrôles des mains sont naturels et réactifs.
+1. Make sure you have a compatible VR headset
+2. Download the game
+3. Launch the application
+4. Dive into the adventure!
 
-## 10. **Bonus Part**
-- [ ] Gérer la compatibilité avec plusieurs casques VR.
-- [ ] Ajouter un contenu riche (plusieurs puzzles, différents types d’interactions, environnement détaillé).
-- [ ] Implémenter un mode multijoueur (si applicable).
-- [ ] Créer un monde cohérent et esthétique.
-- [ ] Ajouter des interactions avec des personnages non-joueurs (PNJ) dans le jeu.
-- [ ] Ajouter un système de sauvegarde et de chargement pour reprendre le jeu plus tard.
+## 🎮 Controls
+
+- **Movement**: Free locomotion
+- **Interaction**: Naturally grab and manipulate objects
+- **Rotation**: Turn objects with controllers
+- **Special Actions**: Push/pull certain elements
+
+## 💻 System Requirements
+
+- Compatible VR headset (Oculus Quest 2 recommended)
+- Minimum play space: 2m x 2m
+- VR controllers
 
 
-###Thing to fix:
-- water glitch long distance
 
-###Thing to add maybe:
-- sound effect/environement
-- bird
-- timer in ui (speedrun tier)
+## 📝 License
+
+This project is under MIT License.
+
+---
+
+Developed with Godot Engine
+
+## 📋 TODO List
+
+### Immediate Priorities
+- [ ] Implement end screen
+- [ ] Add more visual feedback for interactions
+
+
+### **Bonus Part**
+- [ ] Handle compatibility with multiple VR headsets
+- [ ] Add rich content (multiple puzzles, different types of interactions, detailed environment)
+- [ ] Implement multiplayer mode
+- [X] Create a coherent and aesthetic world
+- [ ] Add interactions with non-player characters (NPCs) in the game
+- [ ] Add a save and load system to resume the game later
+
+
+### Bug Fixes
+- [ ] Fix object collisions when hide

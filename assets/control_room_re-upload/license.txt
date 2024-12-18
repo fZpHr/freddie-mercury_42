@@ -1,0 +1,11 @@
+Model Information:
+* title:	Control Room (re-upload)
+* source:	https://sketchfab.com/3d-models/control-room-re-upload-e79e77650b5749f5a1ba18c5124e67b4
+* author:	RaynaudL (https://sketchfab.com/fts_ltx)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Control Room (re-upload)" (https://sketchfab.com/3d-models/control-room-re-upload-e79e77650b5749f5a1ba18c5124e67b4) by RaynaudL (https://sketchfab.com/fts_ltx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

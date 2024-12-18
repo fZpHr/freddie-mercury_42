@@ -126,7 +126,12 @@ func _ready():
 		if grab_point:
 			_grab_points.push_back(grab_point)
 
-
+func _process(delta: float) -> void:
+	if global_position.y < -0.6:
+		global_position = Vector3(5, 2, 5)
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
+		
 # Called when the node exits the tree
 func _exit_tree():
 	# Skip if not picked up
