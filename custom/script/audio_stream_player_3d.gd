@@ -1,7 +1,7 @@
 extends AudioStreamPlayer3D
 
 var ambiance1: AudioStream = preload("res://custom/audio/sea-and-seagull-wave-5932.mp3")
-var ambiance2: AudioStream = preload("res://custom/audio/spaceship-ambient-27988.mp3")
+var ambiance2: AudioStream = preload("res://custom/audio/spaceship-ambient-27988-n7paw1pp-htdr2olb_rAo7ksAU_out_out.mp3")
 var sound_on: AudioStream = preload("res://custom/audio/tvon-108126.mp3")
 var sound_off: AudioStream = preload("res://custom/audio/machine-powering-down-84722_X83heals.mp3")
 func _ready():
@@ -20,7 +20,7 @@ func setup_initial_ambiance():
 		self.area_mask = 1  
 		self.play()
 		print("Initial ambiance started")
-
+		
 func play_sound(sound: AudioStream):
 	var current_volume = self.volume_db
 	self.stream = sound
