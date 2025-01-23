@@ -5,7 +5,7 @@ var xr_interface: XRInterface
 @onready var environment : Environment = $WorldEnvironment.environment
 
 func _ready():
-	$Player.position = Vector3(0, 42.249, 2.648)
+	$Player.position = Vector3(0, 72.249, 2.648)
 	xr_interface = XRServer.find_interface("OpenXR")
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialised successfully")
@@ -42,7 +42,6 @@ func switch_to_ar() -> bool:
 	return true
 
 func switch_to_vr() -> bool:
-	print("switching to vr")
 	if xr_interface:
 		var modes = xr_interface.get_supported_environment_blend_modes()
 		if XRInterface.XR_ENV_BLEND_MODE_OPAQUE in modes:
@@ -58,7 +57,6 @@ func switch_to_vr() -> bool:
 	return true
 
 func _on_detector_toggled(is_on):
-	print("detector toggled")
 	if is_on:
 		if !switch_to_ar():
 			$ARToggle.on = false

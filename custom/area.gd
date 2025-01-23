@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var wall = get_node("../../").get_node("Walls")
-@onready var door: DoorComponent = $"../../Walls/DoorWall/AnimatableBody3D/DoorComponent"
 
 var target_positions = []
 var correct_positions = {

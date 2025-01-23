@@ -1,4 +1,4 @@
-[gd_scene load_steps=336 format=4 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=343 format=4 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://custom/main.gd" id="1_ls2uq"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="3_20ghv"]
@@ -65,13 +65,14 @@
 [ext_resource type="Texture2D" uid="uid://v3byj0y8anly" path="res://models/sci-fi_door/textures/door_normal.jpeg" id="74_borat"]
 [ext_resource type="Texture2D" uid="uid://da4bgjud45iew" path="res://models/image/Screenshot from 2024-12-12 17-20-22.png" id="74_v5iy1"]
 [ext_resource type="Texture2D" uid="uid://bqh5enc50dyt1" path="res://models/image/Screenshot from 2024-12-12 17-59-38.png" id="75_l51mx"]
-[ext_resource type="PackedScene" path="res://custom/hub.tscn" id="75_vhoeq"]
 [ext_resource type="Texture2D" uid="uid://qxfnlq15lwcn" path="res://models/image/Screenshot from 2024-12-12 18-01-09.png" id="76_ftv11"]
 [ext_resource type="Texture2D" uid="uid://jqv07c6np02v" path="res://models/image/Screenshot from 2024-12-12 17-37-17.png" id="76_xtneu"]
 [ext_resource type="Texture2D" uid="uid://bbiwigk1viteh" path="res://models/image/Screenshot from 2024-12-12 17-40-20.png" id="77_egrj2"]
 [ext_resource type="Texture2D" uid="uid://cl6dt23i0n6aq" path="res://models/textures/1-skybox-studio-hyper-realistic-space-env-hd-1(1)(1).jpg" id="78_5gtu0"]
+[ext_resource type="PackedScene" uid="uid://l0rqy7e41mmj" path="res://custom/cube.tscn" id="79_t6k34"]
 [ext_resource type="Texture2D" uid="uid://d041blrvr8gum" path="res://models/image/Screenshot from 2024-12-12 15-26-32.png" id="80_76smq"]
-[ext_resource type="PackedScene" path="res://detector.tscn" id="80_jpwxn"]
+[ext_resource type="Texture2D" uid="uid://b72r65uvnr3o7" path="res://models/control_room_re-upload/textures/Material.022_normal.png" id="80_a4nu3"]
+[ext_resource type="PackedScene" uid="uid://lo63a1gw1o0q" path="res://detector.tscn" id="80_jpwxn"]
 [ext_resource type="Texture2D" uid="uid://qcutw42oul62" path="res://models/image/Screenshot from 2024-12-12 15-28-32.png" id="81_gwddp"]
 [ext_resource type="Script" path="res://scenes/keypad/Keypad.gd" id="85_bfekr"]
 [ext_resource type="AudioStream" uid="uid://dhe7h3g35g7vn" path="res://assets/pressed_key.wav" id="86_xyb7g"]
@@ -103,14 +104,14 @@ bounce_threshold = 1.0
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_oaj8m"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sqs5n"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fonqv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hdnd"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_oaj8m")
+albedo_texture = SubResource("ViewportTexture_sqs5n")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -2450,6 +2451,25 @@ size = Vector3(0.085, 0.035, 0.005)
 [sub_resource type="ViewportTexture" id="ViewportTexture_fuiws"]
 viewport_path = NodePath("Map/Room2/Keypad/SubViewport")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6aes"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ym4p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggefx"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw06p"]
+albedo_texture = ExtResource("80_a4nu3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tp17"]
+albedo_texture = ExtResource("30_ilnam")
+
+[sub_resource type="SphereMesh" id="SphereMesh_s47rx"]
+material = SubResource("StandardMaterial3D_1tp17")
+flip_faces = true
+radius = 100.0
+height = 200.0
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6u4d"]
 
 [sub_resource type="Sky" id="Sky_ojovd"]
@@ -2546,7 +2566,7 @@ physics = SubResource("Resource_4ahhv")
 
 [node name="Screen" parent="Player/Menu" index="1"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_fonqv")
+surface_material_override/0 = SubResource("StandardMaterial3D_4hdnd")
 
 [node name="CollisionShape3D" parent="Player/Menu/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_2mhkk")
@@ -4677,7 +4697,229 @@ transform = Transform3D(-0.0375, 0, -3.27835e-09, 0, 0.0375, 0, 3.27835e-09, 0, 
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/Room2/Stand/Sketchfab_model/deef399fae8b47e3ad31bd8b29909661_obj_cleaner_materialmerger_gles" index="1"]
 
-[node name="Hub" parent="Map" instance=ExtResource("75_vhoeq")]
+[node name="Hub" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Map/Hub"]
+use_collision = true
+collision_mask = 5
+
+[node name="Box1" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.62347, 0)
+size = Vector3(25, 11.2469, 25)
+
+[node name="Box1Substract" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+operation = 2
+size = Vector3(24, 10, 24)
+material = SubResource("StandardMaterial3D_v6aes")
+
+[node name="Box3" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5773, -80.3505)
+size = Vector3(25, 10, 25)
+
+[node name="Box1Substract2" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.0167, -80.3505)
+operation = 2
+size = Vector3(24, 8.87891, 24)
+material = SubResource("StandardMaterial3D_v6aes")
+
+[node name="Box2" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.8079, -55.5108)
+size = Vector3(25, 25.5248, 25.3208)
+
+[node name="Box2Substract" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.1217, -55.4078)
+operation = 2
+size = Vector3(24, 24.1523, 25.1968)
+material = SubResource("StandardMaterial3D_v6aes")
+
+[node name="Door1" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.5856, -68.1035)
+operation = 2
+size = Vector3(5, 8, 0.512)
+
+[node name="Box4" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.0211, -27.2289)
+size = Vector3(25, 26.0423, 31.5986)
+
+[node name="Box1Substract3" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -23.9296)
+operation = 2
+size = Vector3(24, 24, 24)
+material = SubResource("StandardMaterial3D_v6aes")
+
+[node name="Box1Substract4" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.1753, -32.5114)
+operation = 2
+size = Vector3(24, 16, 24)
+material = SubResource("StandardMaterial3D_7ym4p")
+
+[node name="Door3" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.02775, -11.6827)
+operation = 2
+size = Vector3(5, 4.03894, 0.512)
+
+[node name="Obstacle1" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0627441, 12.1527, -48.4166)
+size = Vector3(25, 1, 3)
+material = SubResource("StandardMaterial3D_ggefx")
+
+[node name="Obstacle2" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0627441, 14.4577, -55.3579)
+size = Vector3(25, 1, 3)
+material = SubResource("StandardMaterial3D_ggefx")
+
+[node name="Obstacle3" type="CSGBox3D" parent="Map/Hub/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0627441, 15.9394, -61.9547)
+size = Vector3(25, 1, 3)
+material = SubResource("StandardMaterial3D_ggefx")
+
+[node name="ClimbingWall" type="Node3D" parent="Map/Hub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.57777, -39.9277)
+
+[node name="RockClimbObject" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 6.68394, 2.74813)
+
+[node name="RockClimbObject2" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.70868, 1.26919, 4.1161)
+
+[node name="RockClimbObject11" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.67367, 6.62934, 3.34552)
+
+[node name="RockClimbObject3" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.838457, 2.2737, 4.1161)
+
+[node name="RockClimbObject4" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.322, 4.1619, 4.1161)
+
+[node name="RockClimbObject9" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.58071, 4.68079, 4.1161)
+
+[node name="RockClimbObject10" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.22993, 2.92075, 4.1161)
+
+[node name="RockClimbObject5" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.560651, 3.38779, 4.1161)
+
+[node name="RockClimbObject6" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.512636, 5.29612, 4.1161)
+
+[node name="RockClimbObject7" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.743071, 6.52685, 4.1161)
+
+[node name="RockClimbObject8" parent="Map/Hub/ClimbingWall" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.77658, 5.86243, 4.1161)
+
+[node name="ClimbingWall2" type="Node3D" parent="Map/Hub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.57777, -47.1382)
+
+[node name="RockClimbObject" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 4.1161)
+
+[node name="RockClimbObject2" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.70868, 1.26919, 4.1161)
+
+[node name="RockClimbObject11" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.67367, -0.173691, 4.1161)
+
+[node name="RockClimbObject3" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.838457, 2.2737, 4.1161)
+
+[node name="RockClimbObject4" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.322, 4.1619, 4.1161)
+
+[node name="RockClimbObject9" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.58071, 4.68079, 4.1161)
+
+[node name="RockClimbObject10" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.22993, 2.92075, 4.1161)
+
+[node name="RockClimbObject5" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.560651, 3.38779, 4.1161)
+
+[node name="RockClimbObject6" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.512636, 5.29612, 4.1161)
+
+[node name="RockClimbObject7" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.743071, 6.52685, 4.1161)
+
+[node name="RockClimbObject8" parent="Map/Hub/ClimbingWall2" instance=ExtResource("26_1o4ac")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.77658, 5.86243, 4.1161)
+
+[node name="Labels" type="Node3D" parent="Map/Hub"]
+
+[node name="Label3D" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.20045, -11.3336)
+modulate = Color(0.901961, 0, 0, 1)
+text = "Hello, welcome to our game!"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D2" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.40153, -11.2876)
+modulate = Color(0.901961, 0, 0, 1)
+text = "First, let's start with a quick tutorial
+"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D4" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66025, -20.4778)
+modulate = Color(0.901961, 0, 0, 1)
+text = "Use the grip button to grab objects"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D7" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.857, -92.1513)
+modulate = Color(0.901961, 0, 0, 1)
+text = "Now, open the menu with the menu button"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D8" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.2359, -92.1513)
+modulate = Color(0.901961, 0, 0, 1)
+text = "And press the start button in the menu whenever you are ready!"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D5" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66025, -11.3901)
+modulate = Color(0.901961, 0, 0, 1)
+text = "Press X to crouch"
+font_size = 64
+outline_size = 4
+
+[node name="Label3D6" type="Label3D" parent="Map/Hub/Labels"]
+transform = Transform3D(0.960099, 0, 0.279661, 0, 1, 0, -0.279661, 0, 0.960099, -3.57074, 14.881, -42.1792)
+modulate = Color(0.901961, 0, 0, 1)
+text = "Press A to jump"
+font_size = 64
+outline_size = 4
+
+[node name="PickableObject" parent="Map/Hub" instance=ExtResource("79_t6k34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.202985, 3.1241, -22.5477)
+
+[node name="CollisionShape3D" parent="Map/Hub/PickableObject" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="MeshInstance3D" parent="Map/Hub/PickableObject" index="1"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 7168
+
+[node name="GrabPointHandLeft" parent="Map/Hub/PickableObject" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.108939, 0.04216, -0.0799599)
+
+[node name="GrabPointHandRight" parent="Map/Hub/PickableObject" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106159, 0.0428009, -0.0867214)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Hub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.2176, -39.6978)
+visible = false
+material_override = SubResource("StandardMaterial3D_cw06p")
+mesh = SubResource("SphereMesh_s47rx")
 
 [node name="ARToggle" parent="Map/Hub" instance=ExtResource("80_jpwxn")]
 unique_name_in_owner = true
@@ -4692,5 +4934,4 @@ environment = SubResource("Environment_ulirk")
 [editable path="Map/Room1/Walls/Environment/skybox"]
 [editable path="Map/Room2/Binaire"]
 [editable path="Map/Room2/Stand"]
-[editable path="Map/Hub"]
 [editable path="Map/Hub/PickableObject"]
