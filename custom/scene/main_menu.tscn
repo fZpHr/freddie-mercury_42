@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c353771xd3e1c"]
+[gd_scene load_steps=5 format=3 uid="uid://c353771xd3e1c"]
 
 [ext_resource type="Script" path="res://custom/script/main_menu.gd" id="1_4wsxg"]
 [ext_resource type="Script" path="res://custom/script/quit.gd" id="1_hh6fc"]
+[ext_resource type="Script" path="res://custom/script/load.gd" id="2_cc606"]
+[ext_resource type="Script" path="res://custom/script/settings_menu.gd" id="2_minry"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -62,11 +64,13 @@ text = "Start"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Load"
+script = ExtResource("2_cc606")
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Settings"
+script = ExtResource("2_minry")
 
 [node name="Quit" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
@@ -95,3 +99,50 @@ text = "Yes"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "No"
+
+[node name="Settings" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Language" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Language"
+
+[node name="Music" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Music: on"
+
+[node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[node name="Language" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="French" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "French"
+
+[node name="English" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "English"
+
+[node name="Spanish" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Spanish"
+
+[node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Back"
