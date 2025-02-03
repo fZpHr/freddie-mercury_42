@@ -81,16 +81,14 @@ func check_all_positions(body: Node3D):
 		print("Puzzle completed! Toggling walls...")
 		puzzle_solved = true
 		GameProgress.complete_level("level1")
-		wall.toggle_visibility_of_all()
-		# Activer l'animation de la porte
+		wall.deactivate_environment()
 		if door:
 			door.is_active = true
 			door.start_door_cycle()
 	elif !all_correct and puzzle_solved:
 		print("Puzzle broken! Reverting walls...")
 		puzzle_solved = false
-		wall.toggle_visibility_of_all()
-		# Désactiver l'animation de la porte et la fermer
+		wall.activate_environment()
 		if door:
 			door.is_active = false
 			door.stop_door_cycle()

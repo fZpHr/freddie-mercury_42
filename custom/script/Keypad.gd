@@ -135,3 +135,26 @@ func trigger_error_feedback():
 func trigger_clear_feedback():
 	if xr_interface and xr_interface.is_initialized():
 		xr_interface.trigger_haptic_pulse("default_action_set", "default_haptic", 0.1, 65.0, 0.0, 0.3)
+
+func close_door():
+	if door_already_opened:
+		door_already_opened = false
+		var anim_player = door.get_node("AnimationPlayer")
+		
+		if anim_player:
+			anim_player.play_backwards("door_open")
+			if door_open:
+				door_open.play()
+			
+			var static_body = door.get_node("StaticBody3D")
+			if static_body:
+				var collision_shape = static_body.get_node("CollisionShape3D")
+				if collision_shape:
+					collision_shape.set_deferred("disabled", false)
+					static_body.collision_layer = 1
+					static_body.collision_mask = 1
+
+func reset_keypad_state():
+	password = ""
+	password_label.text = ""
+	close_door()

@@ -31,6 +31,7 @@ func _ready():
 	await $Intro.begin()
 	$Player/LeftH/MovementDirect.enabled = true
 	$Player/LeftH/MovementSprint.enabled = true
+	$Intro.visible = false
 	
 	#toggle_loop()
 

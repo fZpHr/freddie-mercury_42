@@ -1,5 +1,6 @@
 extends VBoxContainer
 @onready var start: Button = $Start
+@onready var hints: Button = $Hints
 @onready var player: XROrigin3D = get_node("/root/main/Player")
 @onready var menu:  = get_node("/root/main/Player/Menu")
 @onready var hub:  = get_node("/root/main/Map/Hub")
@@ -16,6 +17,7 @@ func _on_start_pressed():
 	hub.visible = false
 	player.teleport(Vector3(5, 2, 5))
 	start.visible = false
+	hints.visible = true
 	toggle_menu()
 	GameProgress.reset_progress()
 	GameProgress.complete_level("tutorial")
