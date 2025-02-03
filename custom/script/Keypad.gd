@@ -102,6 +102,7 @@ func _on_AudioStreamPlayer3D_finished():
 func trigger_success_feedback():
 	if not door_already_opened:
 		door_already_opened = true
+		GameProgress.complete_level("level2")
 		var anim_player = door.get_node("AnimationPlayer")
 		print("Chemin de la porte:", door.get_path())
 		

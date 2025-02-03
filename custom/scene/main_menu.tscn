@@ -45,6 +45,7 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
 [node name="Main Menu" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
@@ -143,6 +144,31 @@ theme_override_font_sizes/font_size = 48
 text = "Spanish"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[node name="Load" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Tutorial" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Tutorial"
+
+[node name="Level 1" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Level 2"
+
+[node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Back"

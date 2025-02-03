@@ -80,6 +80,7 @@ func check_all_positions(body: Node3D):
 	if all_correct and !puzzle_solved:
 		print("Puzzle completed! Toggling walls...")
 		puzzle_solved = true
+		GameProgress.complete_level("level1")
 		wall.toggle_visibility_of_all()
 		# Activer l'animation de la porte
 		if door:

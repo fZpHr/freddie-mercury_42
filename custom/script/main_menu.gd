@@ -29,6 +29,7 @@ func _on_start_pressed():
 	start.visible = false
 	save.visible = true
 	toggle_menu()
+	GameProgress.complete_level("tutorial")
 
 func _on_load_pressed():
 	print("Load button pressed!")
