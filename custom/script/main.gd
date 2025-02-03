@@ -1,7 +1,6 @@
 extends Node3D
 
 var xr_interface: XRInterface
-@onready var ar_toggle: Area3D = %ARToggle
 @onready var environment : Environment = $WorldEnvironment.environment
 
 func _ready():
@@ -35,17 +34,6 @@ func _ready():
 	
 	#toggle_loop()
 
-
-func toggle_loop():
-	while true:
-		await get_tree().create_timer(5.0).timeout
-		print("Toggling AR/VR")
-		if ar_toggle.on:
-			switch_to_vr()
-			ar_toggle.on = false
-		else:
-			switch_to_ar()
-			ar_toggle.on = true
 
 func switch_to_ar() -> bool:
 	print("switching to ar")

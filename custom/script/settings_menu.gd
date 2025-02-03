@@ -1,4 +1,7 @@
 extends Button
+
+@onready var language_handler: Node = get_node("/root/main/Map/LanguageHandler")
+
 @onready var main_menu: VBoxContainer = $".."
 @onready var settings: VBoxContainer = $"../../Settings"
 @onready var language_menu: VBoxContainer = $"../../Language"
@@ -31,15 +34,15 @@ func _on_settings_pressed():
 	main_menu.visible = false
 
 func _on_english_pressed():
-	TranslationServer.set_locale("en")
+	change_language("en")
 	_go_back()
 
 func _on_french_pressed():
-	TranslationServer.set_locale("fr")
+	change_language("fr")
 	_go_back()
 
 func _on_spanish_pressed():
-	TranslationServer.set_locale("es")
+	change_language("es")
 	_go_back()
 
 func _on_back_pressed():
@@ -57,3 +60,7 @@ func _on_music_pressed():
 	else:
 		AudioServer.set_bus_mute(0, true)
 		music_btn.text = "Music: Off"
+
+func change_language(lang: String):
+	language_handler.change_language(lang)
+	#add ui (menu) translations

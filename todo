@@ -1,63 +1,12 @@
+Languages
+Hints
 Passthrough end (position based)
-colision on level 2 (blue and orange walls)
+Colision on level 2 (blue and orange walls)
+Clean up main.gd
 
-Load (position for each level -> unlocked when level completed)
-Languages (change text of all labels)
+Tp menu in front of player's looking direction
 Timer and endscreen confetti
 Loading fade in fade out transition (like intro)
-(Hints)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -72,11 +21,10 @@ Done:
 - Multiple VR headsets
 - Coherent and Beautiful world
 - Loading Screen in begining
-
-Todo:
 - Passthrough end
 - Saving / loading system to continue later
-- Hint -> 
+
+- Hint
 - Timer at endscreen with confetti
 - Language
 

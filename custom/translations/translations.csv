@@ -1,8 +1,11 @@
 keys,en,fr,es
-MENU_START,Start,Démarrer,Empezar
-MENU_LOAD,Load,Charger,Cargar
-MENU_SETTINGS,Settings,Paramètres,Ajustes
-MENU_QUIT,Quit,Quitter,Salir
-MENU_BACK,Back,Retour,Volver
-MENU_LANGUAGE,Language,Langue,Idioma
-MENU_MUSIC,Music,Musique,Música
+SEASONS_HINT,"Season start\n      order","Début des saisons\n      ordre","Inicio de temporada\n      orden"
+CLIMB_HINT,You can climb,Tu peux grimper,Puedes trepar
+SHRINES_HINT,Add up the number of shrines,Additionne le nombre d'autels,Suma el número de santuarios
+TUTO_WELCOME,Hello welcome to our game!,Bienvenue dans notre jeu !,¡Bienvenido a nuestro juego!
+TUTO_START,"First, let's start with a quick tutorial","D'abord, commençons par un tutoriel rapide","Primero, empecemos con un tutorial rápido"
+TUTO_GRAB,Use the grip button to grab objects\nYou can also push item with your finger,Utilise le bouton de préhension pour saisir des objets\nTu peux aussi pousser les objets avec ton doigt,Usa el botón de agarre para agarrar objetos\nTambién puedes empujar objetos con tu dedo
+TUTO_MENU,Now open the menu with the menu button,Maintenant ouvre le menu avec le bouton menu,Ahora abre el menú con el botón de menú
+TUTO_START_BUTTON,And press the start button in the menu whenever you are ready!,Et appuie sur le bouton start dans le menu quand tu es prêt !,¡Y presiona el botón de inicio en el menú cuando estés listo!
+TUTO_CROUCH,Press X to crouch,Appuie sur X pour t'accroupir,Presiona X para agacharte
+TUTO_JUMP,Press A to jump,Appuie sur A pour sauter,Presiona A para saltar

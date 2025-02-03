@@ -31,7 +31,7 @@ import/blender/enabled=false
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://custom/translations/translations.csv")
+locale/translations=PackedStringArray("/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.en.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.es.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.fr.translation")
 
 [layer_names]
 
