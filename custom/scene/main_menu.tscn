@@ -45,16 +45,10 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
 [node name="Main Menu" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 script = ExtResource("1_4wsxg")
-
-[node name="Save" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Save"
 
 [node name="Start" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
@@ -149,6 +143,7 @@ theme_override_font_sizes/font_size = 48
 text = "Back"
 
 [node name="Load" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20

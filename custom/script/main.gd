@@ -1,6 +1,8 @@
 extends Node3D
 
 var xr_interface: XRInterface
+@onready var ar_toggle: Area3D = %ARToggle
+@onready var environment : Environment = $WorldEnvironment.environment
 
 func _ready():
 	
@@ -29,3 +31,58 @@ func _ready():
 	await $Intro.begin()
 	$Player/LeftH/MovementDirect.enabled = true
 	$Player/LeftH/MovementSprint.enabled = true
+	
+	#toggle_loop()
+
+
+func toggle_loop():
+	while true:
+		await get_tree().create_timer(5.0).timeout
+		print("Toggling AR/VR")
+		if ar_toggle.on:
+			switch_to_vr()
+			ar_toggle.on = false
+		else:
+			switch_to_ar()
+			ar_toggle.on = true
+
+func switch_to_ar() -> bool:
+	print("switching to ar")
+	if xr_interface:
+		var modes = xr_interface.get_supported_environment_blend_modes()
+		if XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
+			xr_interface.environment_blend_mode = XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND
+		elif XRInterface.XR_ENV_BLEND_MODE_ADDITIVE in modes:
+			xr_interface.environment_blend_mode = XRInterface.XR_ENV_BLEND_MODE_ADDITIVE
+		else:
+			return false
+	else:
+		return false
+
+	get_viewport().transparent_bg = true
+	environment.background_mode = Environment.BG_CLEAR_COLOR
+	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	return true
+
+func switch_to_vr() -> bool:
+	if xr_interface:
+		var modes = xr_interface.get_supported_environment_blend_modes()
+		if XRInterface.XR_ENV_BLEND_MODE_OPAQUE in modes:
+			xr_interface.environment_blend_mode = XRInterface.XR_ENV_BLEND_MODE_OPAQUE
+		else:
+			return false
+	else:
+		return false
+
+	get_viewport().transparent_bg = false
+	environment.background_mode = Environment.BG_SKY
+	environment.ambient_light_source = Environment.AMBIENT_SOURCE_BG
+	return true
+
+func _on_detector_toggled(is_on):
+	if is_on:
+		if !switch_to_ar():
+			$ARToggle.on = false
+	else:
+		if !switch_to_vr():
+			$ARToggle.on = true

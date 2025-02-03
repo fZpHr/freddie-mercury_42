@@ -1,11 +1,12 @@
 extends Button
 @onready var main_menu: VBoxContainer = $".."
-@onready var load_menu: VBoxContainer = $"../Load"
+@onready var load_menu: VBoxContainer = $"../../Load"
 @onready var tutorial_btn: Button = $"../../Load/Tutorial"
 @onready var level1_btn: Button = $"../../Load/Level 1"
 @onready var level2_btn: Button = $"../../Load/Level 2"
 @onready var back_btn: Button = $"../../Load/Back"
 @onready var player: XROrigin3D = get_node("/root/main/Player")
+@onready var hub:  = get_node("/root/main/Map/Hub")
 
 func _ready():
 	self.pressed.connect(_on_load_pressed)
@@ -29,8 +30,14 @@ func update_buttons():
 		
 		if button:
 			var level_data = GameProgress.levels[level_id]
-			var status_text = " (Completed)" if level_data.completed else ""
-			button.text = level_data.name + status_text
+			if level_data.completed:
+				button.add_theme_color_override("font_color", Color.GREEN)
+				button.add_theme_color_override("font_hover_color", Color(0, 0.7, 0, 1))
+				button.add_theme_color_override("font_pressed_color", Color(0, 0.5, 0, 1))
+			else:
+				button.remove_theme_color_override("font_color")
+				button.remove_theme_color_override("font_hover_color")
+				button.remove_theme_color_override("font_pressed_color")
 
 func load_level(level_id: String):
 	if GameProgress.is_level_available(level_id):
@@ -41,6 +48,7 @@ func load_level(level_id: String):
 		main_menu.toggle_menu()
 
 func _on_tutorial_pressed():
+	hub.visible = true
 	load_level("tutorial")
 
 func _on_level1_pressed():
@@ -54,6 +62,7 @@ func _on_back_pressed():
 	main_menu.visible = true
 
 func _on_load_pressed():
+	print("load pressed")
 	main_menu.visible = false
 	load_menu.visible = true
-	load_menu.update
+	update_buttons()

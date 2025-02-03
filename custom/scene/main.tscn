@@ -112,14 +112,14 @@ bounce_threshold = 1.0
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_t6cdb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fdull"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x25sq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suj62"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_t6cdb")
+albedo_texture = SubResource("ViewportTexture_fdull")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -2991,7 +2991,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_x25sq")
+surface_material_override/0 = SubResource("StandardMaterial3D_suj62")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881

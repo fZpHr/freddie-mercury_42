@@ -6,22 +6,48 @@ var levels = {
 	"tutorial": {
 		"name": "Tutorial",
 		"status": LevelStatus.UNLOCKED,
-		"position": Vector3(5, 2, 5),
+		"position": Vector3(0, 202, 0),
 		"completed": false
 	},
 	"level1": {
 		"name": "Level 1",
 		"status": LevelStatus.LOCKED,
-		"position": Vector3(15, 2, 15),
+		"position": Vector3(5, 2, 5),
 		"completed": false
 	},
 	"level2": {
 		"name": "Level 2",
 		"status": LevelStatus.LOCKED,
-		"position": Vector3(25, 2, 25),
+		"position": Vector3(1, 15.5, 9),
 		"completed": false
 	}
 }
+
+func _ready():
+	load_progress()
+
+func reset_progress():
+	levels = {
+		"tutorial": {
+			"name": "Tutorial",
+			"status": LevelStatus.UNLOCKED,
+			"position": Vector3(5, 2, 5),
+			"completed": false
+		},
+		"level1": {
+			"name": "Level 1",
+			"status": LevelStatus.LOCKED,
+			"position": Vector3(15, 2, 15),
+			"completed": false
+		},
+		"level2": {
+			"name": "Level 2",
+			"status": LevelStatus.LOCKED,
+			"position": Vector3(25, 2, 25),
+			"completed": false
+		}
+	}
+	save_progress()
 
 func complete_level(level_id: String):
 	if level_id in levels:
