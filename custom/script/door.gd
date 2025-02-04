@@ -31,7 +31,7 @@ func setup_audio() -> void:
 	door_open_sound.max_db = 0
 	door_open_sound.max_distance = 10
 	door_open_sound.pitch_scale = 1.0
-	add_child(door_open_sound)  # Ajouté à ce nœud au lieu du parent
+	add_child(door_open_sound)
 	
 	door_close_sound = AudioStreamPlayer3D.new()
 	door_close_sound.stream = preload("res://custom/audio/metal-moving-81780.mp3")
@@ -39,7 +39,7 @@ func setup_audio() -> void:
 	door_close_sound.max_db = 0
 	door_close_sound.max_distance = 10
 	door_close_sound.pitch_scale = -1.0
-	add_child(door_close_sound)  # Ajouté à ce nœud au lieu du parent
+	add_child(door_close_sound)
 
 func play_sound(sound: AudioStreamPlayer3D) -> void:
 	if sound and is_instance_valid(sound) and sound.is_inside_tree():

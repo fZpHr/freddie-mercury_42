@@ -1,9 +1,11 @@
 extends VBoxContainer
+
 @onready var start: Button = $Start
 @onready var hints: Button = $Hints
 @onready var player: XROrigin3D = get_node("/root/main/Player")
-@onready var menu:  = get_node("/root/main/Player/Menu")
-@onready var hub:  = get_node("/root/main/Map/Hub")
+@onready var menu = get_node("/root/main/Player/Menu")
+@onready var hub = get_node("/root/main/Map/Hub")
+@onready var xr_camera = get_node("/root/main/Player/XRCamera3D")
 
 func _ready():
 	start.pressed.connect(_on_start_pressed)

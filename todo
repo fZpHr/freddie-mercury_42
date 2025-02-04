@@ -1,15 +1,19 @@
-Languages
-Hints
-Passthrough end (position based)
-Colision on level 2 (blue and orange walls)
-Clean up main.gd
+- Fix translations (https://www.youtube.com/watch?v=Lw-3Tnwv4Ds)
+- Add ui translation
+- Save language data on restart
 
-Tp menu in front of player's looking direction
-Timer and endscreen confetti
-Loading fade in fade out transition (like intro)
+- Write hints
+- Put hints into menu
 
+- Fix collisions on blue and orange wall
+- Add end platform with collisions
 
+- Passthrough end (position based)
+- Clean up main.gd
 
+- Timer and endscreen confetti
+- Loading fade in fade out transition (like in intro)
+- Menu tp in front of player looking direction
 
 
 Entering the first level must be done with an adequate transition (screen fade or loading animation...)

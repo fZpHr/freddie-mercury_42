@@ -10,7 +10,6 @@ func _ready():
 	no.pressed.connect(_on_no_pressed)
 
 func _on_quit_pressed():
-	print("Quit button pressed!")
 	main_menu.visible = false
 	confirmation.visible = true
 	

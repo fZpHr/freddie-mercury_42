@@ -1,6 +1,7 @@
 extends Button
 
 @onready var language_handler: Node = get_node("/root/main/Map/LanguageHandler")
+@onready var viewport_2d_in_3d = get_node("/root/main/Map/Viewport2Din3D")
 
 @onready var main_menu: VBoxContainer = $".."
 @onready var settings: VBoxContainer = $"../../Settings"
@@ -14,6 +15,7 @@ extends Button
 @onready var music_btn: Button = $"../../Settings/Music"
 @onready var language_btn: Button = $"../../Settings/Language"
 
+var music_on: bool = true
 
 func _ready():
 	self.pressed.connect(_on_settings_pressed)
@@ -24,6 +26,7 @@ func _ready():
 	language_back_btn.pressed.connect(_on_back_pressed)
 	back_btn.pressed.connect(_on_back_pressed)
 	music_btn.pressed.connect(_on_music_pressed)
+	_update_music_btn()
 
 func _on_language_pressed():
 	settings.visible = false
@@ -34,15 +37,15 @@ func _on_settings_pressed():
 	main_menu.visible = false
 
 func _on_english_pressed():
-	change_language("en")
+	TranslationServer.set_locale("en")
 	_go_back()
 
 func _on_french_pressed():
-	change_language("fr")
+	TranslationServer.set_locale("fr")
 	_go_back()
 
 func _on_spanish_pressed():
-	change_language("es")
+	TranslationServer.set_locale("es")
 	_go_back()
 
 func _on_back_pressed():
@@ -55,12 +58,16 @@ func _go_back():
 
 func _on_music_pressed():
 	if AudioServer.is_bus_mute(0):
+		music_on = true
 		AudioServer.set_bus_mute(0, false)
-		music_btn.text = "Music: On"
+		_update_music_btn()
 	else:
+		music_on = false
 		AudioServer.set_bus_mute(0, true)
-		music_btn.text = "Music: Off"
+		_update_music_btn()
 
-func change_language(lang: String):
-	language_handler.change_language(lang)
-	#add ui (menu) translations
+func _update_music_btn():
+	if music_on:
+		music_btn.text = tr("LABEL_MUSIC") + ": " + tr("LABEL_ON")
+	else:
+		music_btn.text = tr("LABEL_MUSIC") + ": " + tr("LABEL_OFF")

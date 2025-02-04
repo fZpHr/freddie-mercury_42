@@ -1,4 +1,4 @@
-[gd_scene load_steps=439 format=4 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=446 format=4 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://custom/script/main.gd" id="1_ls2uq"]
 [ext_resource type="Script" path="res://custom/script/player.gd" id="2_7um1e"]
@@ -26,12 +26,16 @@
 [ext_resource type="Texture2D" uid="uid://c5hh5vlil7jmy" path="res://custom/images/initialShadingGroup_baseColor.jpeg" id="14_q0u0x"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="16_aot68"]
 [ext_resource type="Texture2D" uid="uid://56i81uxskhhm" path="res://assets/sunflower/textures/PrimeColor_diffuse.png" id="16_fjuyk"]
-[ext_resource type="PackedScene" uid="uid://c353771xd3e1c" path="res://custom/scene/main_menu.tscn" id="17_6lbhr"]
 [ext_resource type="Texture2D" uid="uid://darn4qpmxuk8j" path="res://assets/sunflower/textures/PrimeColor_normal.png" id="17_hq8sh"]
+[ext_resource type="Script" path="res://custom/script/main_menu.gd" id="17_ks6gb"]
 [ext_resource type="Texture2D" uid="uid://cyw5rg3o41bjf" path="res://assets/sunflower/textures/lambert4_diffuse.jpeg" id="18_3mhqe"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="18_bnkg5"]
+[ext_resource type="Script" path="res://custom/script/hints.gd" id="18_urrdy"]
 [ext_resource type="Texture2D" uid="uid://c3csw6bfxc4mr" path="res://assets/sunflower/textures/lambert4_normal.png" id="19_h7crh"]
+[ext_resource type="Script" path="res://custom/script/load.gd" id="19_sm57w"]
+[ext_resource type="Script" path="res://custom/script/settings_menu.gd" id="20_gili1"]
 [ext_resource type="PackedScene" uid="uid://bc0p6ck0t2bbs" path="res://assets/calendula_flower/scene.gltf" id="20_n8ykg"]
+[ext_resource type="Script" path="res://custom/script/quit.gd" id="21_minu7"]
 [ext_resource type="PackedScene" uid="uid://d33k4vf6yk5wt" path="res://assets/blue_blossom__flower/scene.gltf" id="23_m3jny"]
 [ext_resource type="Shader" path="res://custom/shader/wall.gdshader" id="25_mo72r"]
 [ext_resource type="PackedScene" uid="uid://iovy60mjnlxo" path="res://custom/scene/RockClimbObject.tscn" id="26_1o4ac"]
@@ -109,18 +113,66 @@ jump_velocity = 4.5
 bounciness = 0.0
 bounce_threshold = 1.0
 
+[sub_resource type="GDScript" id="GDScript_057c5"]
+script/source = "extends MarginContainer
+"
+
+[sub_resource type="GDScript" id="GDScript_45ilr"]
+script/source = "extends VBoxContainer
+
+@onready var start: Button = $\"../Main Menu/Start\"
+@onready var hints: Button = $\"../Main Menu/Hints\"
+@onready var load: Button = $\"../Main Menu/Load\"
+@onready var settings: Button = $\"../Main Menu/Settings\"
+@onready var quit: Button = $\"../Main Menu/Quit\"
+@onready var label: Label = $\"../Confirmation/Label\"
+@onready var yes: Button = $\"../Confirmation/Yes\"
+@onready var no: Button = $\"../Confirmation/No\"
+@onready var language: Button = $\"../Settings/Language\"
+@onready var music: Button = $\"../Settings/Music\"
+@onready var back: Button = $\"../Settings/Back\"
+@onready var french: Button = $French
+@onready var english: Button = $English
+@onready var spanish: Button = $Spanish
+@onready var back1: Button = $Back
+@onready var tutorial: Button = $\"../Load/Tutorial\"
+@onready var level_1: Button = $\"../Load/Level 1\"
+@onready var level_2: Button = $\"../Load/Level 2\"
+@onready var back2: Button = $\"../Load/Back\"
+@onready var new_hint: Button = $\"../Hints/New Hint\"
+@onready var previous_hints: Button = $\"../Hints/Previous Hints\"
+@onready var back3: Button = $\"../Hints/Back\"
+
+
+func _ready() -> void:
+	pass
+"
+
+[sub_resource type="PackedScene" id="PackedScene_hdwtv"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("CanvasLayer", "Control", "unique_name_in_owner", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "MarginContainer", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "ColorRect", "color", "script", "Main Menu", "size_flags_vertical", "theme_override_constants/separation", "VBoxContainer", "Start", "theme_override_font_sizes/font_size", "text", "Button", "Hints", "visible", "Load", "Settings", "Quit", "Confirmation", "Label", "horizontal_alignment", "Yes", "No", "Language", "Music", "Back", "French", "English", "Spanish", "Tutorial", "Level 1", "Level 2", "New Hint", "Previous Hints"),
+"node_count": 33,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 0, 0, -1, 0, 0, 0, 0, 1, 1, -1, 7, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 0, 1, 0, 9, 9, -1, 10, 3, 5, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 10, 6, 11, 7, 12, 6, 13, 7, 0, 2, 0, 14, 14, -1, 2, 3, 4, 15, 8, 0, 3, 0, 9, 9, -1, 11, 3, 5, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 10, 9, 11, 10, 12, 9, 13, 10, 16, 11, 0, 4, 0, 20, 17, -1, 4, 3, 4, 18, 12, 19, 10, 16, 13, 0, 5, 0, 24, 21, -1, 3, 3, 4, 22, 14, 23, 15, 0, 5, 0, 24, 25, -1, 5, 26, 16, 3, 4, 22, 14, 23, 17, 16, 18, 0, 5, 0, 24, 27, -1, 4, 3, 4, 22, 14, 23, 19, 16, 20, 0, 5, 0, 24, 28, -1, 4, 3, 4, 22, 14, 23, 21, 16, 22, 0, 5, 0, 24, 29, -1, 4, 3, 4, 22, 14, 23, 23, 16, 24, 0, 4, 0, 20, 30, -1, 4, 26, 16, 3, 4, 18, 12, 19, 10, 0, 11, 0, 31, 31, -1, 4, 3, 4, 22, 14, 23, 25, 32, 5, 0, 11, 0, 24, 33, -1, 3, 3, 4, 22, 14, 23, 26, 0, 11, 0, 24, 34, -1, 3, 3, 4, 22, 14, 23, 27, 0, 4, 0, 20, 28, -1, 4, 26, 16, 3, 4, 18, 12, 19, 10, 0, 15, 0, 24, 35, -1, 3, 3, 4, 22, 14, 23, 28, 0, 15, 0, 24, 36, -1, 3, 3, 4, 22, 14, 23, 29, 0, 15, 0, 24, 37, -1, 3, 3, 4, 22, 14, 23, 30, 0, 4, 0, 20, 35, -1, 5, 26, 16, 3, 4, 18, 12, 19, 10, 16, 31, 0, 19, 0, 24, 38, -1, 3, 3, 4, 22, 14, 23, 32, 0, 19, 0, 24, 39, -1, 3, 3, 4, 22, 14, 23, 33, 0, 19, 0, 24, 40, -1, 3, 3, 4, 22, 14, 23, 34, 0, 19, 0, 24, 37, -1, 3, 3, 4, 22, 14, 23, 30, 0, 4, 0, 20, 27, -1, 4, 26, 16, 3, 4, 18, 12, 19, 10, 0, 24, 0, 24, 41, -1, 3, 3, 4, 22, 14, 23, 35, 0, 24, 0, 24, 42, -1, 3, 3, 4, 22, 14, 23, 36, 0, 24, 0, 24, 43, -1, 3, 3, 4, 22, 14, 23, 37, 0, 24, 0, 24, 37, -1, 3, 3, 4, 22, 14, 23, 30, 0, 4, 0, 20, 25, -1, 4, 26, 16, 3, 4, 18, 12, 19, 10, 0, 29, 0, 24, 44, -1, 3, 3, 4, 22, 14, 23, 38, 0, 29, 0, 24, 45, -1, 3, 3, 4, 22, 14, 23, 39, 0, 29, 0, 24, 37, -1, 3, 3, 4, 22, 14, 23, 30, 0),
+"variants": [true, 3, 15, 1.0, 2, 1, 350, 150, Color(0, 0, 0, 0.294118), 30, 20, SubResource("GDScript_057c5"), 4, ExtResource("17_ks6gb"), 48, "Start", false, "Hints", ExtResource("18_urrdy"), "Load", ExtResource("19_sm57w"), "Settings", ExtResource("20_gili1"), "Quit", ExtResource("21_minu7"), "Are you sure ?", "Yes", "No", "Language", "Music: on", "Back", SubResource("GDScript_45ilr"), "French", "English", "Spanish", "Tutorial", "Level 1", "Level 2", "New Hint", "Previous Hints"],
+"version": 3
+}
+
 [sub_resource type="QuadMesh" id="QuadMesh_5wqa1"]
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8hqal"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ptqso"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rtmg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gsy4r"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_8hqal")
+albedo_texture = SubResource("ViewportTexture_ptqso")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -2980,7 +3032,7 @@ physics = SubResource("Resource_4ahhv")
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.0136616, 1.37895, -0.721344)
 script = ExtResource("16_aot68")
 screen_size = Vector2(1280, 768)
-scene = ExtResource("17_6lbhr")
+scene = SubResource("PackedScene_hdwtv")
 viewport_size = Vector2(1280, 768)
 alpha_scissor_threshold = 0.25
 unshaded = true
@@ -2996,7 +3048,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_0rtmg")
+surface_material_override/0 = SubResource("StandardMaterial3D_gsy4r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881
@@ -5746,50 +5798,49 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.55973, 6.59753, 4.75218)
 [node name="Label3D" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.20045, -11.3336)
 modulate = Color(0.901961, 0, 0, 1)
-text = "Hello, welcome to our game!"
+text = "TUTO_WELCOME"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D2" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.40153, -11.2876)
 modulate = Color(0.901961, 0, 0, 1)
-text = "First, let's start with a quick tutorial"
+text = "TUTO_START"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D4" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66025, -20.4778)
 modulate = Color(0.901961, 0, 0, 1)
-text = "Use the grip button to grab objects
-You can also push item with your finger"
+text = "TUTO_GRAB"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D7" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.857, -92.1513)
 modulate = Color(0.901961, 0, 0, 1)
-text = "Now, open the menu with the menu button"
+text = "TUTO_MENU"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D8" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.2359, -92.1513)
 modulate = Color(0.901961, 0, 0, 1)
-text = "	"
+text = "TUTO_START_BUTTON"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D5" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66025, -11.3901)
 modulate = Color(0.901961, 0, 0, 1)
-text = "Press X to crouch"
+text = "TUTO_CROUCH"
 font_size = 64
 outline_size = 4
 
 [node name="Label3D6" type="Label3D" parent="Map/Hub/Labels"]
 transform = Transform3D(0.960099, 0, 0.279661, 0, 1, 0, -0.279661, 0, 0.960099, -3.57074, 14.881, -42.1792)
 modulate = Color(0.901961, 0, 0, 1)
-text = "Press A to jump"
+text = "TUTO_JUMP"
 font_size = 64
 outline_size = 4
 

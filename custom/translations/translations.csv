@@ -9,3 +9,24 @@ TUTO_MENU,Now open the menu with the menu button,Maintenant ouvre le menu avec l
 TUTO_START_BUTTON,And press the start button in the menu whenever you are ready!,Et appuie sur le bouton start dans le menu quand tu es prêt !,¡Y presiona el botón de inicio en el menú cuando estés listo!
 TUTO_CROUCH,Press X to crouch,Appuie sur X pour t'accroupir,Presiona X para agacharte
 TUTO_JUMP,Press A to jump,Appuie sur A pour sauter,Presiona A para saltar
+BTN_START,Start,Démarrer,Iniciar
+BTN_HINTS,Hints,Indices,Pistas
+BTN_LOAD,Load,Charger,Cargar
+BTN_SETTINGS,Settings,Paramètres,Ajustes
+BTN_QUIT,Quit,Quitter,Salir
+CONFIRM_QUIT,Are you sure?,Êtes-vous sûr ?,¿Estás seguro?
+BTN_YES,Yes,Oui,Sí
+BTN_NO,No,Non,No
+LABEL_LANGUAGE,Language,Langue,Idioma
+LABEL_MUSIC,Music,Musique,Música
+LABEL_ON,On,Activé,Activado
+LABEL_OFF,Off,Désactivé,Desactivado
+BTN_BACK,Back,Retour,Volver
+LANG_FRENCH,French,Français,Francés
+LANG_ENGLISH,English,Anglais,Inglés
+LANG_SPANISH,Spanish,Espagnol,Español
+MENU_TUTORIAL,Tutorial,Tutoriel,Tutorial
+MENU_LEVEL1,Level 1,Niveau 1,Nivel 1
+MENU_LEVEL2,Level 2,Niveau 2,Nivel 2
+BTN_NEW_HINT,New Hint,Nouvel indice,Nueva pista
+BTN_PREV_HINT,Previous Hint,Indice précédent,Pista anterior

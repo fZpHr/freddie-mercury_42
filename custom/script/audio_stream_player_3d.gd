@@ -9,7 +9,6 @@ func _ready():
 
 func setup_initial_ambiance():
 	if ambiance1:
-		print("Starting initial ambiance...")
 		self.stream = ambiance1
 		self.stream.loop = true
 		self.unit_size = 50  
@@ -19,7 +18,6 @@ func setup_initial_ambiance():
 		self.attenuation_model = ATTENUATION_INVERSE_DISTANCE  
 		self.area_mask = 1  
 		self.play()
-		print("Initial ambiance started")
 		
 func play_sound(sound: AudioStream):
 	var current_volume = self.volume_db
@@ -31,7 +29,6 @@ func play_sound(sound: AudioStream):
 	self.volume_db = current_volume
 
 func switch_to_sea_ambiance():
-	print("Switching to sea ambiance...")
 	# Jouer le son ON d'abord
 	await play_sound(sound_on)
 	
@@ -48,10 +45,8 @@ func switch_to_sea_ambiance():
 	var fade_in = create_tween()
 	fade_in.tween_property(self, "volume_db", -10, 0)
 	self.play()
-	print("Switched to sea ambiance")
 
 func switch_to_space_ambiance():
-	print("Switching to space ambiance...")
 	# Jouer le son OFF d'abord
 	await play_sound(sound_off)
 	
@@ -68,7 +63,6 @@ func switch_to_space_ambiance():
 	var fade_in = create_tween()
 	fade_in.tween_property(self, "volume_db", -10, 0)
 	self.play()
-	print("Switched to space ambiance")
 
 func stop_ambiance():
 	var fade_out = create_tween()
@@ -76,4 +70,3 @@ func stop_ambiance():
 	await fade_out.finished
 	await play_sound(sound_off)
 	self.stop()
-	print("Ambiance stopped")

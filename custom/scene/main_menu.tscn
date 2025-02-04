@@ -1,10 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://c353771xd3e1c"]
+[gd_scene load_steps=6 format=3 uid="uid://d2gpb4jjenpu2"]
 
-[ext_resource type="Script" path="res://custom/script/main_menu.gd" id="1_4wsxg"]
 [ext_resource type="Script" path="res://custom/script/quit.gd" id="1_hh6fc"]
 [ext_resource type="Script" path="res://custom/script/hints.gd" id="2_0k2uj"]
 [ext_resource type="Script" path="res://custom/script/load.gd" id="2_cc606"]
 [ext_resource type="Script" path="res://custom/script/settings_menu.gd" id="2_minry"]
+
+[sub_resource type="GDScript" id="GDScript_45ilr"]
+script/source = "extends VBoxContainer
+
+@onready var start: Button = $\"../Main Menu/Start\"
+@onready var hints: Button = $\"../Main Menu/Hints\"
+@onready var load: Button = $\"../Main Menu/Load\"
+@onready var settings: Button = $\"../Main Menu/Settings\"
+@onready var quit: Button = $\"../Main Menu/Quit\"
+@onready var label: Label = $\"../Confirmation/Label\"
+@onready var yes: Button = $\"../Confirmation/Yes\"
+@onready var no: Button = $\"../Confirmation/No\"
+@onready var language: Button = $\"../Settings/Language\"
+@onready var music: Button = $\"../Settings/Music\"
+@onready var back: Button = $\"../Settings/Back\"
+@onready var french: Button = $French
+@onready var english: Button = $English
+@onready var spanish: Button = $Spanish
+@onready var back1: Button = $Back
+@onready var tutorial: Button = $\"../Load/Tutorial\"
+@onready var level_1: Button = $\"../Load/Level 1\"
+@onready var level_2: Button = $\"../Load/Level 2\"
+@onready var back2: Button = $\"../Load/Back\"
+@onready var new_hint: Button = $\"../Hints/New Hint\"
+@onready var previous_hints: Button = $\"../Hints/Previous Hints\"
+@onready var back3: Button = $\"../Hints/Back\"
+
+
+func _ready() -> void:
+	pass
+"
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -49,36 +79,35 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
-script = ExtResource("1_4wsxg")
 
 [node name="Start" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Start"
+text = "BTN_START"
 
 [node name="Hints" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Hints"
+text = "BTN_HINTS"
 script = ExtResource("2_0k2uj")
 
 [node name="Load" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Load"
+text = "BTN_LOAD"
 script = ExtResource("2_cc606")
 
 [node name="Settings" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Settings"
+text = "BTN_SETTINGS"
 script = ExtResource("2_minry")
 
 [node name="Quit" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Quit"
+text = "BTN_QUIT"
 script = ExtResource("1_hh6fc")
 
 [node name="Confirmation" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
@@ -90,18 +119,18 @@ theme_override_constants/separation = 20
 [node name="Label" type="Label" parent="Control/MarginContainer/ColorRect/MarginContainer/Confirmation"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Are you sure ?"
+text = "CONFIRM_QUIT"
 horizontal_alignment = 1
 
 [node name="Yes" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Confirmation"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Yes"
+text = "BTN_YES"
 
 [node name="No" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Confirmation"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "No"
+text = "BTN_NO"
 
 [node name="Settings" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
 visible = false
@@ -112,43 +141,44 @@ theme_override_constants/separation = 20
 [node name="Language" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Language"
+text = "LABEL_LANGUAGE"
 
 [node name="Music" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Music: on"
+text = "LABEL_MUSIC"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Back"
+text = "BTN_BACK"
 
 [node name="Language" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
+script = SubResource("GDScript_45ilr")
 
 [node name="French" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "French"
+text = "LANG_FRENCH"
 
 [node name="English" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "English"
+text = "LANG_ENGLISH"
 
 [node name="Spanish" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Spanish"
+text = "LANG_SPANISH"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Language"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Back"
+text = "BTN_BACK"
 
 [node name="Load" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
 visible = false
@@ -159,22 +189,22 @@ theme_override_constants/separation = 20
 [node name="Tutorial" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Tutorial"
+text = "MENU_TUTORIAL"
 
 [node name="Level 1" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "MENU_LEVEL1"
 
 [node name="Level 2" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Level 2"
+text = "MENU_LEVEL2"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Load"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Back"
+text = "BTN_BACK"
 
 [node name="Hints" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
 visible = false
@@ -185,14 +215,14 @@ theme_override_constants/separation = 20
 [node name="New Hint" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Hints"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "New Hint"
+text = "BTN_NEW_HINT"
 
 [node name="Previous Hints" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Hints"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Previous Hints"
+text = "BTN_PREV_HINT"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Hints"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Back"
+text = "BTN_BACK"

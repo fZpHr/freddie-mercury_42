@@ -6,11 +6,6 @@ var is_audio_playing = false
 var password = ""
 var door_already_opened = false
 
-signal on_correct_password
-signal on_wrong_password
-signal on_clear_password
-signal on_keypad_press
-
 # Audio nodes
 var pressed_audio: AudioStreamPlayer3D
 var correct_audio: AudioStreamPlayer3D
@@ -23,7 +18,6 @@ var password_label: Label
 var xr_interface: XRInterface
 
 func _ready():
-	print("Keypad script starting...")
 	# Get audio nodes
 	pressed_audio = $PressedAudioStream
 	correct_audio = $CorrectAudioStream

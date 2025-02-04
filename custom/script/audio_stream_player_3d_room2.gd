@@ -7,7 +7,6 @@ func _ready():
 
 func setup_initial_ambiance():
 	if ambiance1:
-		print("Starting initial ambiance...")
 		self.stream = ambiance1
 		self.stream.loop = true
 		self.unit_size = 50  
@@ -17,4 +16,3 @@ func setup_initial_ambiance():
 		self.attenuation_model = ATTENUATION_INVERSE_DISTANCE  
 		self.area_mask = 1  
 		self.play()
-		print("Initial ambiance started")

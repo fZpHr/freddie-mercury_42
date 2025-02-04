@@ -32,6 +32,7 @@ import/blender/enabled=false
 [internationalization]
 
 locale/translations=PackedStringArray("/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.en.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.es.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.fr.translation")
+locale/locale_filter_mode=1
 
 [layer_names]
 
