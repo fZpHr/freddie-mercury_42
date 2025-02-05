@@ -3,6 +3,10 @@ extends Node3D
 var xr_interface: XRInterface
 @onready var environment : Environment = $WorldEnvironment.environment
 
+const TRANS_EN = preload("res://custom/translations/translations.en.translation")
+const TRANS_ES = preload("res://custom/translations/translations.es.translation")
+const TRANS_FR = preload("res://custom/translations/translations.fr.translation")
+
 func _ready():
 	
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -18,6 +22,7 @@ func _ready():
 	else:
 		print(xr_interface)
 		print(xr_interface.is_initialized())
+	load_translations()
 	$Player/LeftH/MovementDirect.enabled = false
 	$Player/LeftH/MovementSprint.enabled = false
 	$Map/Room1.visible = false
@@ -73,3 +78,10 @@ func _on_detector_toggled(is_on):
 	else:
 		if !switch_to_vr():
 			$ARToggle.on = true
+
+func load_translations() -> void:
+	TranslationServer.add_translation(TRANS_EN)
+	TranslationServer.add_translation(TRANS_ES)
+	TranslationServer.add_translation(TRANS_FR)
+	TranslationServer.set_locale("en")
+	TranslationServer.set_locale(GameProgress.get_language())

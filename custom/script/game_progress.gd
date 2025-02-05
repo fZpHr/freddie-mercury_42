@@ -23,6 +23,11 @@ var levels = {
 	}
 }
 
+var settings = {
+	"language": "en",
+	"music_on": true
+}
+
 func _ready():
 	load_progress()
 
@@ -33,7 +38,7 @@ func reset_progress():
 			"status": LevelStatus.UNLOCKED,
 			"position": Vector3(0, 202, 0),
 			"completed": false
-		},	
+		},
 		"level1": {
 			"name": "Level 1",
 			"status": LevelStatus.LOCKED,
@@ -67,9 +72,17 @@ func _get_next_level(current_level: String) -> String:
 		"level1": return "level2"
 		_: return ""
 
+func save_language(language_code: String):
+	settings.language = language_code
+	save_progress()
+
+func get_language() -> String:
+	return settings.language
+
 func save_progress():
 	var save_data = {
-		"levels": levels
+		"levels": levels,
+		"settings": settings
 	}
 	var save_file = FileAccess.open("user://game_progress.save", FileAccess.WRITE)
 	save_file.store_var(save_data)
@@ -79,3 +92,5 @@ func load_progress():
 		var save_file = FileAccess.open("user://game_progress.save", FileAccess.READ)
 		var save_data = save_file.get_var()
 		levels = save_data.levels
+		if "settings" in save_data:
+			settings = save_data.settings
