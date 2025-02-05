@@ -14,7 +14,7 @@ extends Button
 
 @onready var start: Button = $"../Start"
 @onready var hints: Button = $"../Hints"
-@onready var load: Button = $"../Load"
+@onready var load_btn: Button = $"../Load"
 @onready var settings_btn: Button = $"."
 @onready var quit: Button = $"../Quit"
 @onready var label: Label = $"../../Confirmation/Label"
@@ -102,7 +102,7 @@ func _update_music_btn():
 func _update_texts():
 	start.text = tr("BTN_START")
 	hints.text = tr("BTN_HINTS")
-	load.text = tr("BTN_LOAD")
+	load_btn.text = tr("BTN_LOAD")
 	settings_btn.text = tr("BTN_SETTINGS")
 	quit.text = tr("BTN_QUIT")
 	label.text = tr("CONFIRM_QUIT")

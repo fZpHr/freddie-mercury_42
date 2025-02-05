@@ -164,14 +164,14 @@ _bundled = {
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3bgo7"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lvrv7"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_crpk1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weudg"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_3bgo7")
+albedo_texture = SubResource("ViewportTexture_lvrv7")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -510,7 +510,7 @@ material = SubResource("ShaderMaterial_j2e8k")
 size = Vector2(30, 40)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpryu"]
-size = Vector3(1, 20, 30)
+size = Vector3(1, 20, 75.9638)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_puunw"]
 render_priority = 0
@@ -527,7 +527,7 @@ material = SubResource("ShaderMaterial_puunw")
 size = Vector3(1, 20, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ok18h"]
-size = Vector3(70, 2, 71.006)
+size = Vector3(70, 2, 146.148)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mx4um"]
 render_priority = 0
@@ -3047,7 +3047,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_crpk1")
+surface_material_override/0 = SubResource("StandardMaterial3D_weudg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881
@@ -3377,11 +3377,11 @@ collision_layer = 7169
 collision_mask = 7169
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room1/Walls/WallCeil"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104843, -0.376999, 17.953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104843, -0.376999, 55.524)
 shape = SubResource("BoxShape3D_ok18h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room1/Walls/WallCeil"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.528732, 0, -0.34033, 32.0704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.10283, 0, -0.34033, 52.4609)
 mesh = SubResource("BoxMesh_8prj3")
 skeleton = NodePath("../CollisionShape3D")
 
@@ -5611,6 +5611,45 @@ script = ExtResource("80_vpwfw")
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 50.4539, 35.2996, 47.039)
 stream = ExtResource("80_rd81h")
 script = ExtResource("80_vpwfw")
+
+[node name="EndWall" type="StaticBody3D" parent="Map/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3109, 42.2027, 108.104)
+collision_layer = 7169
+collision_mask = 7169
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room2/EndWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.336334)
+shape = SubResource("BoxShape3D_kpryu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room2/EndWall/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.54865, 0, 0, 0)
+mesh = SubResource("BoxMesh_byj8k")
+
+[node name="EndWall2" type="StaticBody3D" parent="Map/Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9441, 42.2027, 108.104)
+collision_layer = 7169
+collision_mask = 7169
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room2/EndWall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.336334)
+shape = SubResource("BoxShape3D_kpryu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room2/EndWall2/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.54865, 0, 0, 0)
+mesh = SubResource("BoxMesh_byj8k")
+
+[node name="EndWall3" type="StaticBody3D" parent="Map/Room2"]
+transform = Transform3D(-1.86265e-08, 0, 1, 0, 1, 0, -1, 0, -1.86265e-08, 1.26736, 42.2027, 146.531)
+collision_layer = 7169
+collision_mask = 7169
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Room2/EndWall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.336334)
+shape = SubResource("BoxShape3D_kpryu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room2/EndWall3/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.54865, 0, 0, 0)
+mesh = SubResource("BoxMesh_byj8k")
 
 [node name="Hub" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 500, 0)
