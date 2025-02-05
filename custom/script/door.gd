@@ -38,7 +38,6 @@ func setup_audio() -> void:
 	door_close_sound.unit_size = 3
 	door_close_sound.max_db = 0
 	door_close_sound.max_distance = 10
-	door_close_sound.pitch_scale = -1.0
 	add_child(door_close_sound)
 
 func play_sound(sound: AudioStreamPlayer3D) -> void:

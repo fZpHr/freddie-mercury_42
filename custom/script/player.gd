@@ -8,6 +8,7 @@ extends XROrigin3D
 
 var xr_interface = XRServer.find_interface("OpenXR")
 var menu_visible = false
+var game_won = false
 
 func _ready():
 	victory_sound.stream = preload("res://custom/audio/victory-sound-effect.mp3")
@@ -17,18 +18,17 @@ func _ready():
 func teleport(new_position: Vector3):
 	self.position = new_position
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if self.position.y < -0.6:
 		teleport(Vector3(5, 2, 5))
-	if self.position.z > 30.0:
-		print("game finished !!!")
+	if self.position.z > 30.0 and !game_won:
 		victory_sound.play()
+		game_won = true
 		switch_to_ar()
 		skybox.visible = false
 		map.visible = false
 
 func switch_to_ar() -> bool:
-	print("switching to ar")
 	if xr_interface:
 		var modes = xr_interface.get_supported_environment_blend_modes()
 		if XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:

@@ -7,21 +7,20 @@ const TRANS_ES = preload("res://custom/translations/translations.es.translation"
 const TRANS_FR = preload("res://custom/translations/translations.fr.translation")
 
 func _ready():
-	
 	xr_interface = XRServer.find_interface("OpenXR")
 	
 	if xr_interface:
 		print("OpenXR interface found")
 	else:
 		print("OpenXR interface not found")
-	
 	if xr_interface and xr_interface.is_initialized():
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		get_viewport().use_xr = true
 	else:
 		print(xr_interface)
 		print(xr_interface.is_initialized())
-	load_translations()
+
+	await load_translations()
 	$Player/LeftH/MovementDirect.enabled = false
 	$Player/LeftH/MovementSprint.enabled = false
 	$Map/Room1.visible = false
@@ -38,5 +37,3 @@ func load_translations() -> void:
 	TranslationServer.add_translation(TRANS_EN)
 	TranslationServer.add_translation(TRANS_ES)
 	TranslationServer.add_translation(TRANS_FR)
-	TranslationServer.set_locale("en")
-	TranslationServer.set_locale(GameProgress.get_language())

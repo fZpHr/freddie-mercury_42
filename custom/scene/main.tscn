@@ -118,35 +118,6 @@ script/source = "extends MarginContainer
 "
 
 [sub_resource type="GDScript" id="GDScript_45ilr"]
-script/source = "extends VBoxContainer
-
-@onready var start: Button = $\"../Main Menu/Start\"
-@onready var hints: Button = $\"../Main Menu/Hints\"
-@onready var load: Button = $\"../Main Menu/Load\"
-@onready var settings: Button = $\"../Main Menu/Settings\"
-@onready var quit: Button = $\"../Main Menu/Quit\"
-@onready var label: Label = $\"../Confirmation/Label\"
-@onready var yes: Button = $\"../Confirmation/Yes\"
-@onready var no: Button = $\"../Confirmation/No\"
-@onready var language: Button = $\"../Settings/Language\"
-@onready var music: Button = $\"../Settings/Music\"
-@onready var back: Button = $\"../Settings/Back\"
-@onready var french: Button = $French
-@onready var english: Button = $English
-@onready var spanish: Button = $Spanish
-@onready var back1: Button = $Back
-@onready var tutorial: Button = $\"../Load/Tutorial\"
-@onready var level_1: Button = $\"../Load/Level 1\"
-@onready var level_2: Button = $\"../Load/Level 2\"
-@onready var back2: Button = $\"../Load/Back\"
-@onready var new_hint: Button = $\"../Hints/New Hint\"
-@onready var previous_hints: Button = $\"../Hints/Previous Hints\"
-@onready var back3: Button = $\"../Hints/Back\"
-
-
-func _ready() -> void:
-	pass
-"
 
 [sub_resource type="PackedScene" id="PackedScene_hdwtv"]
 _bundled = {
@@ -168,7 +139,7 @@ size = Vector2(1280, 768)
 [sub_resource type="ViewportTexture" id="ViewportTexture_dr0p1"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjvjk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dju4d"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
@@ -3048,7 +3019,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_kjvjk")
+surface_material_override/0 = SubResource("StandardMaterial3D_dju4d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881
