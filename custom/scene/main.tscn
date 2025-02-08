@@ -136,14 +136,14 @@ _bundled = {
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dr0p1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vwv88"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dju4d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ue8ve"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_dr0p1")
+albedo_texture = SubResource("ViewportTexture_vwv88")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -3019,7 +3019,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_dju4d")
+surface_material_override/0 = SubResource("StandardMaterial3D_ue8ve")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881

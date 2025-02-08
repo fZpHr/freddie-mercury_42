@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2gpb4jjenpu2"]
+[gd_scene load_steps=6 format=3 uid="uid://c353771xd3e1c"]
 
 [ext_resource type="Script" path="res://custom/script/quit.gd" id="1_hh6fc"]
 [ext_resource type="Script" path="res://custom/script/hints.gd" id="2_0k2uj"]
@@ -76,6 +76,7 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
 
 [node name="Main Menu" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
@@ -224,5 +225,26 @@ text = "BTN_PREV_HINT"
 
 [node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Hints"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "BTN_BACK"
+
+[node name="HintsDisplay" type="VBoxContainer" parent="Control/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Control/MarginContainer/ColorRect/MarginContainer/HintsDisplay"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Hint Hint Hint Hint Hint Hint 
+Hint Hint Hint Hint Hint Hint 
+Hint Hint Hint Hint Hint Hint 
+Hint Hint Hint Hint Hint Hint 
+Hint Hint Hint Hint Hint Hint"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/HintsDisplay"]
+layout_mode = 2
+size_flags_vertical = 8
 theme_override_font_sizes/font_size = 48
 text = "BTN_BACK"
