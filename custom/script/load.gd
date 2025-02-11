@@ -76,6 +76,7 @@ func _on_tutorial_pressed():
 	hub.visible = true
 	start.visible = true
 	hints.visible = false
+	player.cancel_win()
 	load_level("tutorial")
 
 func _on_level1_pressed():
@@ -84,11 +85,13 @@ func _on_level1_pressed():
 	start.visible = false
 	hints.visible = true
 	wall.activate_environment()
+	player.cancel_win()
 	load_level("level1")
 
 func _on_level2_pressed():
 	hub.visible = false
 	wall.deactivate_environment()
+	player.cancel_win()
 	load_level("level2")
 
 func _on_back_pressed():

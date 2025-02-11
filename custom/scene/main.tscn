@@ -139,7 +139,7 @@ size = Vector2(1280, 768)
 [sub_resource type="ViewportTexture" id="ViewportTexture_2hjwu"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68qwn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj2ep"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
@@ -3019,7 +3019,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_68qwn")
+surface_material_override/0 = SubResource("StandardMaterial3D_tj2ep")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881
@@ -6406,6 +6406,13 @@ offset_bottom = 23.0
 scale = Vector2(2.5, 2.5)
 text = "freddie-mercury
 42 project"
+
+[node name="WinLabel" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.01152, 15.0656, 40.0105)
+visible = false
+modulate = Color(0, 0.768935, 1.92523e-06, 1)
+text = "GG, you won the game!"
+font_size = 100
 
 [connection signal="finished" from="Map/Room2/Keypad/PressedAudioStream" to="Map/Room2/Keypad" method="_on_AudioStreamPlayer3D_finished"]
 
