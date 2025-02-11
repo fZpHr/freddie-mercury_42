@@ -30,3 +30,4 @@ MENU_LEVEL1,Level 1,Niveau 1,Nivel 1
 MENU_LEVEL2,Level 2,Niveau 2,Nivel 2
 BTN_NEW_HINT,New Hint,Nouvel indice,Nueva pista
 BTN_PREV_HINT,Previous Hint,Indice précédent,Pista anterior
+GAME_WON,"GG, you won the game!","Bravo, tu as gagné le jeu !","¡Felicitaciones, has ganado el juego!"

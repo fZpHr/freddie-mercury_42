@@ -75,7 +75,7 @@ func load_level(level_id: String):
 func _on_tutorial_pressed():
 	hub.visible = true
 	start.visible = true
-	hints.visible = false
+	#hints.visible = false
 	player.cancel_win()
 	load_level("tutorial")
 
@@ -83,13 +83,14 @@ func _on_level1_pressed():
 	reset_flowers()
 	hub.visible = false
 	start.visible = false
-	hints.visible = true
+	#hints.visible = true
 	wall.activate_environment()
 	player.cancel_win()
 	load_level("level1")
 
 func _on_level2_pressed():
 	hub.visible = false
+	start.visible = false
 	wall.deactivate_environment()
 	player.cancel_win()
 	load_level("level2")

@@ -16,14 +16,4 @@ func _ready():
 		print(xr_interface)
 		print(xr_interface.is_initialized())
 
-	$Player/LeftH/MovementDirect.enabled = false
-	$Player/LeftH/MovementSprint.enabled = false
-	$Map/Room1.visible = false
 	await $Intro.start()
-	await get_tree().create_timer(2).timeout
-	$Player.position = Vector3(0, 202, 0)
-	$Map/Room1.visible = true
-	await $Intro.begin()
-	$Player/LeftH/MovementDirect.enabled = true
-	$Player/LeftH/MovementSprint.enabled = true
-	$Intro.visible = false

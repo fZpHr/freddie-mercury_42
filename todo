@@ -1,40 +1,14 @@
-- Fix translations (https://www.youtube.com/watch?v=Lw-3Tnwv4Ds)
-- Add ui translation
-- Save language data on restart
-
-- Write hints
-- Put hints into menu
-
 - Fix collisions on blue and orange wall
-- Add end platform with collisions
-
-- Passthrough end (position based)
-- Clean up main.gd
-
-- Timer and endscreen confetti
+- Fix door animation when loading level2 after winning
 - Loading fade in fade out transition (like in intro)
 - Menu tp in front of player looking direction
 
-
 Entering the first level must be done with an adequate transition (screen fade or loading animation...)
 
-
 Bonuses:
-
-Done:
 - Multiple VR headsets
 - Coherent and Beautiful world
 - Loading Screen in begining
 - Passthrough end
 - Saving / loading system to continue later
-
-- Hint
-- Timer at endscreen with confetti
 - Language
-
-
-
-White  -> 1
-Yellow -> 2
-Orange -> 3
-Blue   -> 4
