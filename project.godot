@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 GameProgress="*res://custom/script/game_progress.gd"
+Translations="*res://custom/script/translations.gd"
 
 [editor_plugins]
 
@@ -29,9 +30,16 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 import/blender/enabled=false
 
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
+
 [internationalization]
 
-locale/translations=PackedStringArray("/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.en.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.es.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.fr.translation")
+locale/translations=PackedStringArray("res://custom/translations/translations.csv", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.en.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.es.translation", "/nfs/homes/marde-vr/sgoinfre/freddie-mercury_42/custom/translations/translations.fr.translation")
 locale/locale_filter_mode=1
 
 [layer_names]

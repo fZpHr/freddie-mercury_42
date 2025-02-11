@@ -19,7 +19,7 @@ func _on_start_pressed():
 	hub.visible = false
 	player.teleport(Vector3(5, 2, 5))
 	start.visible = false
-	hints.visible = true
+	#hints.visible = true
 	toggle_menu()
 	GameProgress.reset_progress()
 	GameProgress.complete_level("tutorial")

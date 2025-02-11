@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c353771xd3e1c"]
+[gd_scene load_steps=5 format=3 uid="uid://c353771xd3e1c"]
 
 [ext_resource type="Script" path="res://custom/script/quit.gd" id="1_hh6fc"]
-[ext_resource type="Script" path="res://custom/script/hints.gd" id="2_0k2uj"]
 [ext_resource type="Script" path="res://custom/script/load.gd" id="2_cc606"]
 [ext_resource type="Script" path="res://custom/script/settings_menu.gd" id="2_minry"]
 
@@ -91,7 +90,6 @@ visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "BTN_HINTS"
-script = ExtResource("2_0k2uj")
 
 [node name="Load" type="Button" parent="Control/MarginContainer/ColorRect/MarginContainer/Main Menu"]
 layout_mode = 2
