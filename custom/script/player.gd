@@ -21,7 +21,7 @@ func teleport(new_position: Vector3):
 	self.position = new_position
 	
 func _process(_delta: float) -> void:
-	if self.position.y < -0.6:
+	if self.position.y < -1.2:
 		teleport(Vector3(5, 2, 5))
 	if self.position.z > 30.0 and !game_won:
 		victory_sound.play()
