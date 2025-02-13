@@ -6,6 +6,7 @@ extends VBoxContainer
 @onready var menu = get_node("/root/main/Player/Menu")
 @onready var hub = get_node("/root/main/Map/Hub")
 @onready var xr_camera = get_node("/root/main/Player/XRCamera3D")
+@onready var anim = get_node("/root/main/Map/Room1/AnimationPlayer")
 
 func _ready():
 	start.pressed.connect(_on_start_pressed)
@@ -18,6 +19,8 @@ func toggle_menu():
 func _on_start_pressed():
 	hub.visible = false
 	player.teleport(Vector3(5, 2, 5))
+
+	anim.play("fade_in")
 	start.visible = false
 	#hints.visible = true
 	toggle_menu()
