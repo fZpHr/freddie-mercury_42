@@ -1,4 +1,4 @@
-[gd_scene load_steps=450 format=4 uid="uid://dwhpb1t4rs47b"]
+[gd_scene load_steps=454 format=4 uid="uid://dwhpb1t4rs47b"]
 
 [ext_resource type="Script" path="res://custom/script/main.gd" id="1_ls2uq"]
 [ext_resource type="Script" path="res://custom/script/player.gd" id="2_7um1e"]
@@ -94,7 +94,6 @@
 [ext_resource type="AudioStream" uid="uid://p186rfdqoqkp" path="res://custom/audio/cinematic-intro-3-40041.mp3" id="89_4wkmi"]
 [ext_resource type="Script" path="res://assets/bin/scene.gd" id="89_iav83"]
 [ext_resource type="Script" path="res://custom/script/KeypadButton.gd" id="89_r8qp3"]
-[ext_resource type="PackedScene" path="res://animation_player.tscn" id="95_o2ol0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bv7in"]
 size = Vector3(0.0198413, 0.0179227, 0.0905212)
@@ -137,14 +136,14 @@ _bundled = {
 resource_local_to_scene = true
 size = Vector2(1280, 768)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_whhc3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6yd8y"]
 viewport_path = NodePath("Player/Menu/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26dha"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nc06"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_whhc3")
+albedo_texture = SubResource("ViewportTexture_6yd8y")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mhkk"]
@@ -2917,6 +2916,77 @@ viewport_path = NodePath("Intro/Sprite3D/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_kw1m7"]
 viewport_path = NodePath("Intro/Sprite3D2/SubViewport")
 
+[sub_resource type="Animation" id="Animation_notgh"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Map/Hub/MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mpgu6"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8g42m"]
+resource_name = "fade_in_long"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Map/Hub/MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mxocn"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_slpd2"]
+_data = {
+"RESET": SubResource("Animation_notgh"),
+"fade_in": SubResource("Animation_mpgu6"),
+"fade_in_long": SubResource("Animation_8g42m"),
+"fade_out": SubResource("Animation_mxocn")
+}
+
 [node name="main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 script = ExtResource("1_ls2uq")
@@ -3017,7 +3087,7 @@ render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="Player/Menu"]
 mesh = SubResource("QuadMesh_5wqa1")
-surface_material_override/0 = SubResource("StandardMaterial3D_26dha")
+surface_material_override/0 = SubResource("StandardMaterial3D_7nc06")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Player/Menu"]
 collision_layer = 5242881
@@ -3829,14 +3899,14 @@ max_distance = 1.0
 emission_angle_degrees = 90.0
 script = ExtResource("70_4ninv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7, 5)
-mesh = SubResource("SphereMesh_4qtgn")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map/Room1"]
 libraries = {
 "": SubResource("AnimationLibrary_xn8c7")
 }
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 5, 12.5)
+mesh = SubResource("SphereMesh_4qtgn")
 
 [node name="Room2" type="Node3D" parent="Map"]
 
@@ -6465,7 +6535,10 @@ scale = Vector2(2.5, 2.5)
 text = "freddie-mercury
 42 project"
 
-[node name="AnimationPlayer" parent="Intro" instance=ExtResource("95_o2ol0")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro"]
+libraries = {
+"": SubResource("AnimationLibrary_slpd2")
+}
 
 [node name="WinLabel" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.01152, 15.0656, 40.0105)
