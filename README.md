@@ -7,7 +7,7 @@ Ok, it’s an escape game in VR..
 
 ### VR Compatibility
 - [x] Compatible with Oculus Quest 2
-- [ ] Compatible with other VR headsets
+- [x] Compatible with other VR headsets
 
 ### Lobby and Start
 - [x] Starting area / Lobby
@@ -27,7 +27,7 @@ Ok, it’s an escape game in VR..
 - [x] Complete lobby
 - [x] Level 1 (Main)
 - [x] Level 2 (Final room)
-- [ ] End screen
+- [x] End screen
 
 ### Atmosphere
 - [x] Ambient sounds
@@ -75,16 +75,13 @@ Developed with Godot Engine
 ## 📋 TODO List
 
 ### Immediate Priorities
-- [ ] Implement end screen
 
 ### **Bonus Part**
-- [ ] Handle compatibility with multiple VR headsets
-- [ ] Add rich content (multiple puzzles, different types of interactions, detailed environment)
-- [ ] Implement multiplayer mode
+- [X] Handle compatibility with multiple VR headsets
 - [X] Create a coherent and aesthetic world
-- [ ] Add interactions with non-player characters (NPCs) in the game
-- [ ] Add a save and load system to resume the game later
-
+- [X] Add a save and load system to resume the game later
+- [X] Paththrough
+- [X] Multi-language
+- [X] Introduction
 
 ### Bug Fixes
-- [ ] Fix object collisions when hide
