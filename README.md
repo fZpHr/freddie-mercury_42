@@ -42,6 +42,14 @@ Ok, it’s an escape game in VR..
 - [x] Smooth controls
 - [x] Performance optimization
 
+### **Bonus Part**
+- [X] Handle compatibility with multiple VR headsets
+- [X] Create a coherent and aesthetic world
+- [X] Add a save and load system to resume the game later
+- [X] Paththrough
+- [X] Multi-language
+- [X] Introduction
+      
 ## 🛠️ Installation
 
 1. Make sure you have a compatible VR headset
@@ -75,13 +83,5 @@ Developed with Godot Engine
 ## 📋 TODO List
 
 ### Immediate Priorities
-
-### **Bonus Part**
-- [X] Handle compatibility with multiple VR headsets
-- [X] Create a coherent and aesthetic world
-- [X] Add a save and load system to resume the game later
-- [X] Paththrough
-- [X] Multi-language
-- [X] Introduction
 
 ### Bug Fixes
