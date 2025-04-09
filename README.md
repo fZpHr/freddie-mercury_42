@@ -1,3 +1,10 @@
+Little preview (different from the one with a VR headset).
+
+https://github.com/user-attachments/assets/1d382b82-127f-4c87-a861-86388b74ef74
+
+
+
+
 # 🎮 Freddie-Mercury
 
 Freddie-Mercury is a brand new concept in VR! The player will have to resolve subtle puzzles and mysteries to unlock new steps and finally break free!
